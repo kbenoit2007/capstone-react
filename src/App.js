@@ -1,8 +1,13 @@
-
+import ImageUpload from "./components/ImageUpload/ImageUpload";
+import React, { useState } from 'react';
 
 function App() {
   return (
-<div>Capstone</div>
+    <>
+    <div>Capstone</div>
+<ImageUpload />
+    </>
+
   );
 }
 
