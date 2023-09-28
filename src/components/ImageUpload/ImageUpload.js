@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import {  useState } from 'react';
 import axios from "axios"
 
 
@@ -23,14 +23,16 @@ function ImageUpload(){
         const formData = new FormData();
         console.log("the selected files "+JSON.stringify(selectedFile))
         files.forEach((files,i)=>{
+          console.log(`files`,files, files.name)
             formData.append(`files`,files, files.name);
         })
-        // console.log(selectedFile)
-        // console.log(formData)
+        
+  
        
   
         axios.post('http://localhost:3001/upload',formData)
-        //   .then((response) => response.json())
+       // console.log(formData)
+          //  .then((response) => response.json())
           .then((data) => {
             // Handle the response from the server
             console.log('Server response:', data);
