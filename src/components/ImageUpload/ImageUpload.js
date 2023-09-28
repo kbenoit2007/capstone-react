@@ -2,13 +2,14 @@ import {  useState } from 'react';
 import axios from "axios"
 
 
-function ImageUpload(){
+function ImageUpload(props){
     // const [fileList, setFileList] = useState(null)
     const [selectedFile, setSelectedFile] = useState(null);
 
     const handleFileChange = (e) => {
       setSelectedFile(e.target.files);
     };
+    
 
    
   
@@ -21,9 +22,9 @@ function ImageUpload(){
       // You can implement your image upload logic here, e.g., sending the file to a server.
       if (selectedFile) {
         const formData = new FormData();
-        console.log("the selected files "+JSON.stringify(selectedFile))
+        // console.log("the selected files "+JSON.stringify(selectedFile))
         files.forEach((files,i)=>{
-          console.log(`files`,files, files.name)
+          // console.log(`files`,files, files.name)
             formData.append(`files`,files, files.name);
         })
         
