@@ -26,16 +26,24 @@ function ImageUpload(props){
         files.forEach((files,i)=>{
           // console.log(`files`,files, files.name)
             formData.append(`files`,files, files.name);
+            formData.append('userId',props.userId)
         })
+
+        // console.log("the formdata is "+JSON.stringify(files[0].size))
+
+        const config = {     
+          headers: { 'content-type': 'multipart/form-data' }
+      }
         
   
        
   
-        axios.post('http://localhost:3001/upload',formData)
-       // console.log(formData)
+        axios.post('http://localhost:3001/upload',formData,config)
+        
           //  .then((response) => response.json())
           .then((data) => {
             // Handle the response from the server
+            
             console.log('Server response:', data);
           })
           .catch((error) => {
