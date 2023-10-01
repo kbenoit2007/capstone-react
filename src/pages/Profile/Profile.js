@@ -1,17 +1,19 @@
 import React from 'react';
-import ImageUpload from '../../components/ImageUpload/ImageUpload';
-import {useParams} from 'react-router-dom'
+import {useParams, Link} from 'react-router-dom'
+import { v4 as uuidv4 } from 'uuid';
 
 
 
 function Profile() {
-const {userId} = useParams()
-console.log("The Params "+userId)
+
   return (
     <div>
       <h1>Profile Page</h1>
       <p>Welcome User</p>
-      <ImageUpload userId={userId}/>
+      <Link to={"book/"+uuidv4()}>
+      <p>Click Here to create your own Book</p>
+      </Link>
+
       <p>Profile for blah here are your books</p>
     </div>
   );
