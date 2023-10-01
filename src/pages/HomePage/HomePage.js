@@ -8,7 +8,6 @@ function HomePage() {
       <h1>HomePage</h1>
       <Link to={"/login"}>
       <h1>Login Page</h1>
-
       </Link>
       
       <></>
