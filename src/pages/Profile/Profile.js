@@ -10,6 +10,7 @@ console.log("The Params "+userId)
   return (
     <div>
       <h1>Profile Page</h1>
+      <p>Welcome User</p>
       <ImageUpload userId={userId}/>
       <p>Profile for blah here are your books</p>
     </div>
