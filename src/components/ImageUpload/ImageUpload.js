@@ -26,7 +26,8 @@ function ImageUpload(props){
         files.forEach((files,i)=>{
           // console.log(`files`,files, files.name)
             formData.append(`files`,files, files.name);
-            formData.append('userId',props.userId)
+            // formData.append('userId',props.userId)
+            formData.append('book_id',props.bookId)
         })
 
         // console.log("the formdata is "+JSON.stringify(files[0].size))
