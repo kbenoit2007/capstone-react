@@ -22,13 +22,14 @@ function Book() {
     const bookObject ={
         id: bookId,
         name:bookName,
-        description:bookDesc
+        description:bookDesc,
+        user_id:userId
     } 
 
     console.log(bookObject)
 
     try{
-        await axios.post(`http://localhost:3001/book`, bookObject).then((data)=>{
+        await axios.post(`http://localhost:3001/books`, bookObject).then((data)=>{
           console.log(data)
           console.log(JSON.stringify(data.data[0].id))
        
