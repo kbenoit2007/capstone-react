@@ -32,6 +32,7 @@ function App() {
       <Route path="login" element={<LoginPage />} />
       <Route path="user/:userId" element={<Profile />} />
       <Route path="user/:userId/book/:bookId" element={<Book />} />
+      {/* <Route path="user/:userId/book/" element={<Book />} /> */}
       <Route path="*" element={<NotFound />} />
     </Routes>
     
