@@ -1,13 +1,15 @@
 import React from 'react';
 import {useState,useEffect} from 'react'
 import axios from 'axios'
-import ImageUpload from '../../components/ImageUpload/ImageUpload';
+
 import {useParams, Link} from 'react-router-dom'
 import './ViewBook.scss'
+import GetBook from '../../components/GetBook/GetBook';
 
 function ViewBook() {
     const [images,SetImages]=useState("")
     const {userId, bookId} = useParams()
+
 
     //Write function to get images from a book
 
@@ -20,15 +22,16 @@ function ViewBook() {
          //  navigate('/warehouses');
          })
 
-    },[])
+    },[userId,bookId])
 
 
    
   return (
     <>
-    <h1>View Book</h1>
+   
     {images && (
     <div>
+         <h1><GetBook book={bookId}/></h1>
         {images.map((image) => (
           <div>
             <img src={image.url} className="viewBook__images" />
