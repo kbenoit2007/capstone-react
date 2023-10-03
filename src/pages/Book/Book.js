@@ -30,8 +30,8 @@ function Book() {
 
     try{
         await axios.post(`http://localhost:3001/books`, bookObject).then((data)=>{
-          console.log(data)
-          console.log(JSON.stringify(data.data[0].id))
+          // console.log(data)
+          // console.log(JSON.stringify(data.data[0].id))
        
         //  navigate('/warehouses');
         })

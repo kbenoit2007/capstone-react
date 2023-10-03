@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import Profile from "./pages/Profile/Profile";
 import Book from "./pages/Book/Book";
+import ViewBook from "./pages/ViewBook/ViewBook";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 
 
@@ -32,6 +33,7 @@ function App() {
       <Route path="login" element={<LoginPage />} />
       <Route path="user/:userId" element={<Profile />} />
       <Route path="user/:userId/book/:bookId" element={<Book />} />
+      <Route path="user/:userId/viewbook/:bookId" element={<ViewBook />} />
       {/* <Route path="user/:userId/book/" element={<Book />} /> */}
       <Route path="*" element={<NotFound />} />
     </Routes>

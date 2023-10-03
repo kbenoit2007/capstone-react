@@ -2,15 +2,19 @@ import React, { useState, useEffect } from "react";
 import {useParams, Link} from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios'
+import './Profile.scss'
 
 
 
 
 function Profile() {
   const {userId} = useParams()
+  //const {bookId} = useParams()
   console.log("the user id is "+userId)
+ // console.log("the book id is "+bookId)
 
   const [booksData,setBooksData] = useState("")
+  const [thumbnailImages, setThumbnailImages] = useState("")
 
   // async function handleSubmit(event){
   //   event.preventDefault()
@@ -31,7 +35,21 @@ axios.get(`http://localhost:3001/user/${userId}/books`).then((data)=>{
       console.error(err)
     })
   },[])
- //} 
+
+  // Get Images for a book
+
+  // useEffect(() => {
+  //   axios.get(`http://localhost:3001/user/${userId}/books/fb373a21-92d9-4869-9d28-2fa303c44155/images`).then((data)=>{
+          
+  //       setThumbnailImages(data.data)
+  //         // console.log(JSON.stringify(data.data[0].id))
+  //       //  navigate('/warehouses');
+  //         console.log(thumbnailImages)
+  //       }).catch(err =>{
+  //         console.error(err)
+  //       })
+  //     },[])
+
 
 
   return (
@@ -53,13 +71,22 @@ axios.get(`http://localhost:3001/user/${userId}/books`).then((data)=>{
 				</div>
 			)} */}
 
+{/* http://localhost:3000/user/fb373a21-92d9-4869-9d28-2fa303c44154/viewbook/fb373a21-92d9-4869-9d28-2fa303c44155 */}
+
       {booksData && (
         <div>
-          {booksData.map((books)=>(
-           <><p>{books.name} {books.description}</p></>
+          {booksData.map((book)=>(
+           <><Link to={`viewbook/${book.id}`}>
+              <div>{book.name} {book.description} <img src={"https://placehold.co/120x120?text=Book"} className="profile__image"/></div>
+           </Link>
+           
+           </>
           ))}
           </div>
       )}
+
+
+
     </div>
   );
 }
