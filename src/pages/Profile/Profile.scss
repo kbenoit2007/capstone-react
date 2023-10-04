@@ -1,4 +1,8 @@
 .profile{
+    &__container{
+        display: flex;
+        justify-content: space-around;
+    }
     &__image{
         height:50px;
         width:50px;

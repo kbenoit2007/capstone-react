@@ -27,7 +27,7 @@ function ViewBook() {
 
    
   return (
-    <>
+    <div className="mainApp__container">
    
     {images && (
     <div>
@@ -39,7 +39,7 @@ function ViewBook() {
         ))}
         </div>
         )}
-    </>
+    </div>
   )
 }
 

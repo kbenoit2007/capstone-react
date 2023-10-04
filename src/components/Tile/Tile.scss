@@ -1,0 +1,34 @@
+.tile{
+    &__container{
+        display: flex;
+        // border: 5px black solid;
+        flex-direction: column;
+        width: 40%;
+        padding: 5px;
+        box-shadow: 5px 5px 17px 5px rgba(0,0,0,0.7);
+        border-radius: 5px;
+        margin: 50px;
+    }
+    &__contents{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__header{
+        display: flex;
+        border-bottom: 1px lightgrey solid;
+    }
+    &__headerText{
+        display: flex;
+        padding-top: 0px;
+
+    }
+    &__age{
+        display: flex;
+        font-size: 30px;
+    }
+}
+
+.removePadding{
+    padding: 0px;
+}

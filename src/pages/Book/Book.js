@@ -40,7 +40,7 @@ function Book() {
      }
     }
   return (
-    <div>
+    <div className="mainApp__container">
       <h1>Your Book</h1>
       <form onSubmit={handleSubmit}>
         <label>Name</label>
