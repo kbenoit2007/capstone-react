@@ -7,6 +7,7 @@ import Profile from "./pages/Profile/Profile";
 import Book from "./pages/Book/Book";
 import ViewBook from "./pages/ViewBook/ViewBook";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import Header from "./components/Header/Header"
 
 
 
@@ -22,10 +23,8 @@ function App() {
   return (
     <>
     <BrowserRouter>
-    <Link to={"/"}>
-    <div>Capstone</div>
+    <Header />
 
-    </Link>
     
     <Routes>
       <Route path="/" element={<HomePage />} />

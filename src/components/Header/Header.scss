@@ -1,0 +1,12 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    align-items: center;
+    &__logoContainer{
+        width: 50%;
+    }
+    &__logo{
+        height: 20px;
+    }
+}
