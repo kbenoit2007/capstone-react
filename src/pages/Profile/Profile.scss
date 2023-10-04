@@ -2,6 +2,7 @@
     &__container{
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
     }
     &__image{
         height:50px;
