@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import {useState} from "react"
 import axios from 'axios'
+import LoginRegister from '../../components/LoginRegister/LoginRegister';
 
 
 
@@ -38,6 +39,8 @@ const navigate = useNavigate();
 
   return (
     <div>
+      <LoginRegister />
+      
       <h1>Login Page</h1>
       <form onSubmit={handleSubmit}>
         <label>Username</label>
