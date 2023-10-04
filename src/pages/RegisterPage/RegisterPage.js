@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import {useState} from 'react'
 import axios from 'axios'
+import LoginRegister from '../../components/LoginRegister/LoginRegister';
 
 
 function RegisterPage() {
@@ -10,31 +11,32 @@ function RegisterPage() {
 
     const navigate = useNavigate();
 
-    async function handleSubmit(event){
-        event.preventDefault()
-        const userObject ={
-            username:userName,
-            password:password
-        }
+    // async function handleSubmit(event){
+    //     event.preventDefault()
+    //     const userObject ={
+    //         username:userName,
+    //         password:password
+    //     }
 
-        try{
-            await axios.post(`http://localhost:3001/register`, userObject).then((data)=>{
-              if(data.statusText == "Created"){
-                navigate(`/login`);
-              }  
+    //     try{
+    //         await axios.post(`http://localhost:3001/register`, userObject).then((data)=>{
+    //           if(data.statusText == "Created"){
+    //             navigate(`/login`);
+    //           }  
               
         
-            })
-         } catch(err){
-           console.error(err)
-         }
-        }
+    //         })
+    //      } catch(err){
+    //        console.error(err)
+    //      }
+    //     }
     
 
 
   return (
     <div>
-      <h1>RegisterPage</h1>
+      <LoginRegister />
+      {/* <h1>RegisterPage</h1>
       <form onSubmit={handleSubmit}>
         <label>Username</label>
         <input type="text" onChange={(e)=>{
@@ -47,7 +49,7 @@ function RegisterPage() {
         }}
         />
         <button type="Submit">Submit </button>
-      </form>
+      </form> */}
 
     </div>
   );
