@@ -123,14 +123,14 @@ function LoginRegister(){
             <form onSubmit={handleRegister}>
             <TextInput className="input__name" placeholder="Enter Name" type="text" onTextChange={handleName}/>    
             <TextInput className="input__username" placeholder="Enter Username" type="text" onTextChange={handleRegisterUserName}/>
-            <TextInput className="input__password" placeholder="Enter Password" type="passwrod" onTextChange={handleRegisterPassword} />
+            <TextInput className="input__password" placeholder="Enter Password" type="password" onTextChange={handleRegisterPassword} />
             <SubmitButton />
             </form>
         </div></>):(<>        <h2>Sign In</h2>
         <div className="input__textContainer">
             <form onSubmit={handleLogin}>
             <TextInput className="input__username" placeholder="Enter Username" type="text" onTextChange={handleUserName}/>
-            <TextInput className="input__password" placeholder="Enter Password" type="passwrod" onTextChange={handlePassword} />
+            <TextInput className="input__password" placeholder="Enter Password" type="password" onTextChange={handlePassword} />
             <SubmitButton />
             </form>
         </div></>)}
