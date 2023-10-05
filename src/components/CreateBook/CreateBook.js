@@ -14,7 +14,7 @@ function CreateBook(){
 
 
     try{
-        await axios.post(`http://localhost:3001/book`, bookObject).then((data)=>{
+        await axios.post(`${process.env.REACT_APP_URL}:${process.env.REACT_APP_PORT}/book`, bookObject).then((data)=>{
           console.log(data)
           console.log(JSON.stringify(data.data[0].id))
     

@@ -53,7 +53,7 @@ function LoginRegister(){
         console.log(userObject)
     
         try{
-            await axios.post(`http://localhost:3001/user`, userObject).then((data)=>{
+            await axios.post(`${process.env.REACT_APP_URL}:${process.env.REACT_APP_PORT}/user`, userObject).then((data)=>{
               console.log(data)
               console.log(JSON.stringify(data.data[0].id))
               navigate(`../user/${data.data[0].id}`);
@@ -96,7 +96,7 @@ function LoginRegister(){
         }
 
         try{
-            await axios.post(`http://localhost:3001/register`, userObject).then((data)=>{
+            await axios.post(`${process.env.REACT_APP_URL}:${process.env.REACT_APP_PORT}/register`, userObject).then((data)=>{
               if(data.statusText == "Created"){
                 navigate(`/login`);
               }  
