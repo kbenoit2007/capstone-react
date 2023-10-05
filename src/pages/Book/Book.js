@@ -29,7 +29,7 @@ function Book() {
     console.log(bookObject)
 
     try{
-        await axios.post(`http://localhost:3001/books`, bookObject).then((data)=>{
+        await axios.post(`${process.env.REACT_APP_URL}:${process.env.REACT_APP_PORT}/books`, bookObject).then((data)=>{
           // console.log(data)
           // console.log(JSON.stringify(data.data[0].id))
        

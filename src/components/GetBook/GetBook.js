@@ -14,7 +14,7 @@ function GetBook(props){
     //Write function to get images from a book
 
     useEffect(()=>{
-        axios.get(`http://localhost:3001/user/${userId}/viewbook/${props.book}`).then((data)=>{
+        axios.get(`${process.env.REACT_APP_URL}:${process.env.REACT_APP_PORT}/user/${userId}/viewbook/${props.book}`).then((data)=>{
              SetBookData(data)
          })
 

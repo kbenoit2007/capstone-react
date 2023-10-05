@@ -14,7 +14,7 @@ function ViewBook() {
     //Write function to get images from a book
 
     useEffect(()=>{
-        axios.get(`http://localhost:3001/user/${userId}/viewbook/${bookId}/images`).then((data)=>{
+        axios.get(`${process.env.REACT_APP_URL}:${process.env.REACT_APP_PORT}/user/${userId}/viewbook/${bookId}/images`).then((data)=>{
           //  console.log(data)
              SetImages(data.data)
            // console.log(JSON.stringify(data.data[0].id))

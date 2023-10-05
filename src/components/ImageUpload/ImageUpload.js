@@ -39,7 +39,7 @@ function ImageUpload(props){
   
        
   
-        axios.post('http://localhost:3001/upload',formData,config)
+        axios.post(`${process.env.REACT_APP_URL}:${process.env.REACT_APP_PORT}/upload`,formData,config)
         
           //  .then((response) => response.json())
           .then((data) => {

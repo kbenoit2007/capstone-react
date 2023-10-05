@@ -11,25 +11,7 @@ function RegisterPage() {
 
     const navigate = useNavigate();
 
-    // async function handleSubmit(event){
-    //     event.preventDefault()
-    //     const userObject ={
-    //         username:userName,
-    //         password:password
-    //     }
-
-    //     try{
-    //         await axios.post(`http://localhost:3001/register`, userObject).then((data)=>{
-    //           if(data.statusText == "Created"){
-    //             navigate(`/login`);
-    //           }  
-              
-        
-    //         })
-    //      } catch(err){
-    //        console.error(err)
-    //      }
-    //     }
+ 
     
 
 
