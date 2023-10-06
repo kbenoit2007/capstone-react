@@ -37,7 +37,7 @@ axios.get(`${process.env.REACT_APP_URL}:${process.env.REACT_APP_PORT}/user/${use
 
      
       <Tile header="Baby Name" componentToRender={<AgeTile birthday="Jan 04 2023" age="9 Months"/>}/>
-      <Tile header="Create Book" componentToRender={ <Link to={"book/"+uuidv4()}>
+      <Tile header="Create Book" componentToRender={ <Link to={"bookbuilder/"}>
       <p>Click Here to create your own Book</p>
       </Link>}/>
 
