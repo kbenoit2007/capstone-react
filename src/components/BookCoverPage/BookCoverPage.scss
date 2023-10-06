@@ -1,0 +1,24 @@
+.bookCover{
+    
+    &__container{
+        display: flex;
+        width:30%;
+        border: 2px black solid;
+        height: 200px;
+        margin-bottom: 30px;
+        height: 12.5rem;
+        width:21.26rem;
+
+        &--selected{
+      
+                opacity: 0.5; /* Reduce opacity to visually grey out the selected image */
+            
+        }
+    }
+    &__image{
+        height: 12.3rem;
+        width:21.01rem;
+    }
+
+}
+
