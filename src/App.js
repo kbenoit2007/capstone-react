@@ -8,11 +8,14 @@ import Book from "./pages/Book/Book";
 import ViewBook from "./pages/ViewBook/ViewBook";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import Header from "./components/Header/Header"
+import SelectCoverPage from "./pages/SelectCoverPage/SelectCoverPage";
+import BookBuilderPage from "./pages/BookBuilderPage/BookBuilderPage";
 
 
 
 //Components
 import ImageUpload from "./components/ImageUpload/ImageUpload";
+
 
 // import {useParams} from 'react-router-dom'
 
@@ -31,6 +34,7 @@ function App() {
       <Route path="register" element={<RegisterPage />} />
       <Route path="login" element={<LoginPage />} />
       <Route path="user/:userId" element={<Profile />} />
+      <Route path="user/:userId/bookbuilder" element={<BookBuilderPage />} />
       <Route path="user/:userId/book/:bookId" element={<Book />} />
       <Route path="user/:userId/viewbook/:bookId" element={<ViewBook />} />
       {/* <Route path="user/:userId/book/" element={<Book />} /> */}

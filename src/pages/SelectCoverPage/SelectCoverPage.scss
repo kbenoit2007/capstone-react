@@ -1,0 +1,13 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+.selectCoverPage{
+    &__container{
+        display:flex;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+        justify-content: space-around;
+    }
+
+}
