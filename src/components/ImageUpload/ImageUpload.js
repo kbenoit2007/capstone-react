@@ -4,6 +4,7 @@ import axios from "axios"
 
 function ImageUpload(props){
     // const [fileList, setFileList] = useState(null)
+    console.log("The data passed from above"+ JSON.stringify(props.bookDetailsData))
     const [selectedFile, setSelectedFile] = useState(null);
 
     const handleFileChange = (e) => {

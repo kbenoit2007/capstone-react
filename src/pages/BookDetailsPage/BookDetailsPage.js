@@ -8,9 +8,14 @@ import {useParams, Link} from 'react-router-dom'
 
 
 
-function BookDetails({passedData}){
+function BookDetails({selectCoverPageData,onSelectClickNext}){
     const [bookName, setBookName] = useState("")
     const [bookDesc, setBookDesc] = useState("")
+    const [bookDetailsData, setBookDetailsDate] = useState('')
+    
+   
+
+    console.log("reading functon from coverpage "+selectCoverPageData)
    // console.log("received data "+passedData)
    const {userId} = useParams()
 
@@ -22,14 +27,19 @@ function BookDetails({passedData}){
         id: uuidv4(),
         name:bookName,
         description:bookDesc,
-        user_id:userId
+        user_id:userId,
+        cover_pic:selectCoverPageData
     }
     try{
         await axios.post(`${process.env.REACT_APP_URL}:${process.env.REACT_APP_PORT}/books`, bookObject).then((data)=>{
           console.log(data)
           console.log(JSON.stringify(data.data[0].id))
-    
-        //  navigate('/warehouses');
+        //    const newArray = [selectCoverPageData, bookObject]
+        //    console.log("data to be passed along "+newArray)
+          // setBookDetailsDate(newArray)
+           onSelectClickNext('ImageUpload',bookObject)
+
+
         })
      } catch(err){
        console.error(err)
@@ -37,13 +47,21 @@ function BookDetails({passedData}){
 
    }
 
+   const handleNextClick = ()=>{
+    // console.log("after next "+selectedImage)
+    
+    // navigate('BookDetailsPage')
+    
+    // return selectedImage
+}
+
     return(<div className="mainApp__container">
         <div className="bookDetails__container">
 
         
         <div className="bookDetails__leftContainer">
             <div>
-                <img src={passedData} className="bookDetails__bookCoverImage"/>
+                <img src={selectCoverPageData} className="bookDetails__bookCoverImage"/>
             </div>
 
         </div>
@@ -66,6 +84,7 @@ function BookDetails({passedData}){
 
 </div>
     </div>
+    <button type="submit" onClick={handleNextClick}>Next</button>
     </div>
     
     )
