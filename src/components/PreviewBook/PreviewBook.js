@@ -12,7 +12,7 @@ function PreviewBook({imageUploadData}){
     const handleClick =()=>{
         navigate(`../user/${imageUploadData.bookDetails.user_id}`);
     }
-    console.log("data from image is "+JSON.stringify(imageUploadData.files.length))
+    console.log("data from image is "+JSON.stringify(imageUploadData))
     return (
         <>
       <HTMLFlipBook width={600} height={500} usePortrait="true" showCover="true" autoSize="false">
@@ -30,15 +30,6 @@ function PreviewBook({imageUploadData}){
       </>
     );
 
-    // {bookData.data && (
-    //     <div>
-    //         {bookData.data.map((book) => (
-    //           <div>
-    //             {book.name}
-    //           </div>
-    //         ))}
-    //         </div>
-    //         )}
 }
 
 export default PreviewBook

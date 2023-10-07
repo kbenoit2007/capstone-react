@@ -39,7 +39,7 @@ function ImageUpload({bookDetailsData,onBookDetailsClickNext }){
       if (selectedFile) {
         const formData = new FormData();
         files.forEach((files,i)=>{
-            formData.append(`files`,files, files.name);
+            formData.append(`file`,files, files.name);
             formData.append('book_id',bookDetailsData.id)
         })
         const config = {     
