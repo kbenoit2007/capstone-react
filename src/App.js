@@ -17,11 +17,6 @@ import BookBuilderPage from "./pages/BookBuilderPage/BookBuilderPage";
 import ImageUpload from "./components/ImageUpload/ImageUpload";
 
 
-// import {useParams} from 'react-router-dom'
-
-// const {id} = useParams
-// console.log("The Params "+id)
-
 function App() {
   return (
     <>
