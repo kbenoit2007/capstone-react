@@ -21,7 +21,7 @@ function LoginRegister(){
     const location = useLocation()
     // console.log("using location "+location.pathname)
 
-
+    
     // const registerPresent = () => {
         useEffect(() => {
             if(location.pathname == "/register"){
@@ -42,7 +42,7 @@ function LoginRegister(){
 
 // const history = useHistory()
 // console.log("using history "+ history.location.pathname)
-
+    axios.defaults.withCredentials = true
     async function handleLogin(event){
         event.preventDefault()
         const userObject ={
@@ -56,11 +56,14 @@ function LoginRegister(){
             await axios.post(`${process.env.REACT_APP_URL}:${process.env.REACT_APP_PORT}/user`, userObject).then((data)=>{
               console.log(data)
               console.log(JSON.stringify(data.data[0].id))
-              navigate(`../user/${data.data[0].id}`);
-            //  navigate('/warehouses');
+              if(data.status === 200 ){
+                navigate(`../user/${data.data[0].id}`);
+                window.location.reload(true)
+              }
             })
          } catch(err){
-           console.error(err)
+          alert("user not found")
+           console.error("User Not Found")
          }
         }
 
