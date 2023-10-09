@@ -12,6 +12,7 @@ function LoginRegister(){
     const [loginUserName,setLoginUserName] = useState("") 
     const [loginPassword,setLoginPassword] = useState("") 
     const [registerPageVisible, setRegisterPageVisible] = useState(false)
+    const [nameRegister, setNameRegister] = useState("")
     const [userNameRegister, setUserNameRegister] = useState("")
     const [passwordRegister, setPasswordRegister] = useState("")
 
@@ -77,9 +78,8 @@ function LoginRegister(){
 
     // Register Logic
     function handleName(newText){
-
+      setNameRegister(newText)
     }
-
     function handleRegisterUserName(newText){
         setUserNameRegister(newText)
     }
@@ -89,11 +89,10 @@ function LoginRegister(){
         setPasswordRegister(newText)
     }
 
-
-
     async function handleRegister(event){
         event.preventDefault()
         const userObject ={
+            name: nameRegister,
             username:userNameRegister,
             password:passwordRegister
         }
@@ -136,6 +135,7 @@ function LoginRegister(){
             <TextInput className="input__password" placeholder="Enter Password" type="password" onTextChange={handlePassword} />
             <SubmitButton />
             </form>
+            <div>Do you have an account? <Link to="../register" >Register Here</Link></div>
         </div></>)}
 
         </div>
