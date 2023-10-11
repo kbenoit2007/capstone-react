@@ -1,0 +1,17 @@
+.newUser{
+    &__container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    &__choose{
+        &--event{
+
+        }
+    }
+    &__chooseContainer{
+        display: flex;
+    }
+}

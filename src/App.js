@@ -16,6 +16,7 @@ import LoginRegister from "./components/LoginRegister/LoginRegister";
 
 //Components
 import ImageUpload from "./components/ImageUpload/ImageUpload";
+import NewUserFlow from "./pages/NewUserFlow/NewUserFlow";
 
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
       {
         auth ?
         <>
+        <Route path="user/:userId/new" element={<NewUserFlow />} />
       <Route path="user/:userId" element={<Profile />} />
       <Route path="user/:userId/bookbuilder" element={<BookBuilderPage />} />
       <Route path="user/:userId/book/:bookId" element={<Book />} />
