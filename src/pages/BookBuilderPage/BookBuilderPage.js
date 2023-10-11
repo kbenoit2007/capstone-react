@@ -14,15 +14,12 @@ function BookBuilderPage(){
 
     const handleNextClick = (component,data) =>{
         setDataFromSelectCoverPage(data)
-        // console.log("the data.."+data)
         setActivePage(component)
     }
 
     const handleSelectClick = (component,data)=>{
         setDataFromBookDetailsPage(data)
         setActivePage(component)
-
-        // console.log("the data after select State set "+data)
     }
 
     const handleBookDetailsNext = (component, data)=>{
@@ -31,9 +28,6 @@ function BookBuilderPage(){
       setActivePage(component)
     }
 
-    // const handleImageUploadData = (component, data)=>{
-    //     set
-    // }
 
     return(
     <div className="mainApp__container">
