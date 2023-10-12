@@ -1,0 +1,79 @@
+.selectEvent{
+    &__container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    &__header{
+        display: flex;
+        justify-content: center;
+        font-size: 4rem;
+        margin-top: 3rem;
+        margin-bottom: 6rem;
+    }
+    &__event{
+        display: flex;
+        flex-direction: column;
+        &--image{
+            width:30rem;
+            height:30rem
+        }
+        &--radioButton{
+            width: 40rem;
+            height: 40rem;
+            border-radius: 15px;
+            position: relative;
+            text-align: center;
+            padding: 15px 20px;
+            box-shadow: 0 1px #c3c3c3;
+            cursor: pointer;
+            background-color: #eaeaea;
+            float: left;
+            margin-right: 15px;
+
+        }
+        &--newBornLabel ,&--marriageLabel{
+            font-size: 3rem;
+        }
+    }
+    &__chooseContainer{
+        display: flex;
+        justify-content: center;
+    }
+    &__button{
+        &--submit{
+            display: flex;
+            justify-content: center;
+            margin-top: 5rem;
+        }
+    }   
+}
+
+
+label > .selectEvent__input {
+    display: none;
+}
+
+.selectEvent__input:not([type="image" i]) {
+    box-sizing: border-box;
+}
+
+.selectEvent__input[type="radio" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 0px 5px;
+    padding: initial;
+    border: initial;
+}
+
+.selectEvent__event--marriageLabel input:checked + .selectEvent__event--radioButton {
+    background-color: #253c6a;
+    color: #fff;
+}
+
+.selectEvent__event--newBornLabel input:checked + .selectEvent__event--radioButton {
+    background-color: #253c6a;
+    color: #fff;
+}

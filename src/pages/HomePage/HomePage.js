@@ -2,7 +2,7 @@ import React,{useRef} from 'react';
 import './HomePage.scss'
 import { Link } from "react-router-dom";
 import hero from '../../assets/heropics/60393689-4537-42e7-aa1e-7fa9915381f6-1922-000002e4571f1f7e.jpeg'
-import hero2 from '../../assets/heropics/Screenshot 2023-10-10 at 19.17.31.png'
+import hero2 from '../../assets/heropics/choosenHeroPic.png'
 import Header from '../../components/Header/Header';
 import HowItWorks from '../../components/HowItWorks/HowItWorks';
 import AboutUs from '../../components/AboutUs/AboutUs';

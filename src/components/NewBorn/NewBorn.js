@@ -2,6 +2,7 @@ import React,{useState} from "react";
 import axios from 'axios'
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import './NewBorn.scss'
 
 
 
@@ -57,16 +58,25 @@ function NewBorn({selectEventData,newBornData }){
 
     return(<>
    
-   
-    <form onSubmit={handleSubmit}>
-    <label htmlFor="BabyName">Name</label>   
-    <input type="text" id="BabyName" className="newBorn__name" onChange={(e) => setBabyName(e.target.value)}></input>
-    <label htmlFor="Birthday">BirthDay</label> 
+   <div className="newBornPage__container">
+    <div className="newBornPage__header">Baby Details</div>
 
+    <form onSubmit={handleSubmit}>
+   <div className="newBornPage__inputContainer">
+   <div>
+    <label className="newBornPage__labels" htmlFor="BabyName">{`Name`}</label>   
+    <input  type="text" id="BabyName" placeholder="Enter Your Baby's Name" className="newBornPage__name" onChange={(e) => setBabyName(e.target.value)}></input>
+    </div>
+
+    <div>
+    <label className="newBornPage__labels" htmlFor="Birthday">BirthDay</label> 
+    <DatePicker id="Birthday" selected={birthDate} dateFormat="MMMM dd, yyyy" className="newBornPage__date" onChange={handleDateChange} />
+    </div>
+    <button className="newBornPage__submitButton" type="Submit" >Submit</button>
     
-    <DatePicker id="Birthday" selected={birthDate} dateFormat="MMMM dd, yyyy" className="newBorn__name" onChange={handleDateChange} />
-    <button type="Submit" >Submit</button>
+    </div>
     </form>
+    </div>
     </>)
 }
 
