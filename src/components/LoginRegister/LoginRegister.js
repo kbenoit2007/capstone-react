@@ -51,14 +51,15 @@ function LoginRegister(){
             password:loginPassword
         } 
     
-        console.log(userObject)
-    
         try{
             await axios.post(`${process.env.REACT_APP_URL}:${process.env.REACT_APP_PORT}/user`, userObject).then((data)=>{
-              console.log(data)
-              console.log(JSON.stringify(data.data[0].id))
-              if(data.status === 200 ){
+              console.log(data.status)
+              console.log(JSON.stringify(data.data[0].birthdate), JSON.stringify(data.data[0].babyname), JSON.stringify(data.data[0].event))
+              if(data.status === 200 && data.data[0].event !== null && data.data[0].babyname !== null && data.data[0].birthdate !== null){
                 navigate(`../user/${data.data[0].id}`);
+                window.location.reload(true)
+              }else if(data.status === 200 && data.data[0].event === null && data.data[0].babyname === null && data.data[0].birthdate === null) {
+                navigate(`../user/${data.data[0].id}/new`);
                 window.location.reload(true)
               }
             })

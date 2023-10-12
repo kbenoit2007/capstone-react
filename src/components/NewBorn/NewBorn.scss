@@ -1,0 +1,36 @@
+.newBornPage{
+    &__container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    &__header{
+        display:flex;
+        font-size: 4rem;
+        margin-top: 3rem;
+        margin-bottom: 6rem;
+        justify-content: center;
+    }
+    &__inputContainer{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+      
+    }
+    &__labels{
+        font-size: 2rem;
+        margin-right: 2rem;
+    }
+    &__name{
+        width:40rem;
+        margin-bottom: 5rem;
+    }
+    &__date{
+        width:40rem;
+    }
+
+    &__submitButton{
+        margin-top:4rem;
+    }
+
+}

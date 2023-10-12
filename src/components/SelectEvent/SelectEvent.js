@@ -1,6 +1,10 @@
 import React, { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from 'axios'
+import baby1 from '../../assets/eventpics/baby1.png'
+import marriage2 from '../../assets/eventpics/marriage2.png'
+
+import './SelectEvent.scss'
 
 function SelectEvent({onNextClick}){
     const {userId} = useParams()
@@ -50,41 +54,57 @@ function SelectEvent({onNextClick}){
 
 
 
-    return(<>
-        <div className="newUser__container">
-    Choose Your Event 
-    <div className="newUser__chooseContainer">
-
-
-    <form onSubmit={handleSubmitEvent}>
-      <div>
-        <input
-          type="radio"
-          id="newBornChoice"
-          name="eventChoice"
-          value="New Born"
-          onChange={(e) => setEvent(e.target.value)}
-          checked={event === "New Born"} // Add this line to set the checked state
-        />
-        <label htmlFor="newBornChoice">New Born</label>
-
-        <input
-          type="radio"
-          id="marriageChoice"
-          name="eventChoice"
-          value="Marriage"
-          onChange={(e) => setEvent(e.target.value)}
-          checked={event === "Marriage"} // Add this line to set the checked state
-        />
-        <label htmlFor="marriageChoice">Marriage</label>
-      </div>
-      <div></div>
-      <button type="submit">Submit</button>
-    </form>
-     </div>
-
-    </div>
-
-    </>)
+    return (
+      <>
+        <div className="selectEvent__container">
+          <div className="selectEvent__header">Choose Your Event </div>
+          <div>
+            <form onSubmit={handleSubmitEvent}>
+              <div className="selectEvent__chooseContainer">
+                <div className="selectEvent__event">
+                <label className="selectEvent__event--newBornLabel" htmlFor="newBornChoice" >
+                  <input
+                    type="radio"
+                    id="newBornChoice"
+                    name="eventChoice"
+                    value="New Born"
+                    className="selectEvent__input"
+                    onChange={(e) => setEvent(e.target.value)}
+                    checked={event === "New Born"} 
+                  />
+                  <div className="selectEvent__event--radioButton">
+                  <img src={baby1} className="selectEvent__event--image" />
+                  <p>New Born</p>
+                  </div>
+                  </label>
+                </div>
+                <div>
+                <label className="selectEvent__event--marriageLabel" htmlFor="marriageChoice">
+                  <input
+                    type="radio"
+                    id="marriageChoice"
+                    name="eventChoice"
+                    className="selectEvent__input"
+                    value="Marriage"
+                    onChange={(e) => setEvent(e.target.value)}
+                    checked={event === "Marriage"} 
+                  />
+                  <div className="selectEvent__event--radioButton">
+                  <img src={marriage2} className="selectEvent__event--image" />
+                  <p>Marriage</p>
+                  </div>
+                  
+                  </label>
+                </div>
+              </div>
+            
+              <div className="selectEvent__button--submit"><button type="submit" >Submit</button></div>
+            </form>
+          </div>
+         
+          
+        </div>
+      </>
+    );
 }
 export default SelectEvent
