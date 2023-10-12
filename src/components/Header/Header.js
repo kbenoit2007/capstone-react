@@ -1,19 +1,27 @@
 import React from "react";
-import {useState,useEffect} from 'react'
+import {useState,useEffect,useRef} from 'react'
 import {useParams, Link, useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import './Header.scss'
 import headerLogo from '../../assets/logo/Logo.png'
+import Cookies from 'js-cookie';
+import avatarImage from '../../assets/icons/avatar.png'
+import logoutImage from '../../assets/icons/logout.png'
+import howItWorksImage from '../../assets/icons/system.png'
+import aboutUsImage from '../../assets/icons/info.png'
 
 
-function Header(props){ 
+function Header({scrollToTarget, scrollToAboutUs}){ 
  
 
   const [auth,setAuth ]= useState(false)
   const [name,setName] = useState('')
+  const [userId,setUserId] = useState('')
   const [message, setMessage] = useState('')
 
+
   const navigate = useNavigate()
+
 
 
 
@@ -26,6 +34,7 @@ function Header(props){
         if(res.data.Status === "Success"){
             setAuth(true)
             setName(res.data.name)
+            setUserId(Cookies.get('userId'))
         } else{
             setAuth(false)
             setMessage(res.data.Message)
@@ -49,34 +58,44 @@ function Header(props){
          
    }
 
+   function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+   const profileName = capitalizeFirstLetter(name);
 
+  const relative = "relative"
+  const isHomePage = window.location.pathname === '/';
 
   return (
-    <div className="header">
+  <>
+  
+    {isHomePage == true ? (
+<>    <div className={`header`}>
         <div className="header__logoContainer">
         <a href="/">
             <img src={headerLogo} className="header__logo"/>
             </a>
         </div>
-        <div>How It Works</div>
-        <div>FAQ</div>
-        <div>About Us</div>
+        <button className="header__buttons" onClick={scrollToTarget}><img className="header__buttons--howItWorks" src={howItWorksImage} />How It Works</button>
+        <button className="header__buttons" onClick={scrollToAboutUs}><img className="header__buttons--aboutUs" src={aboutUsImage}/>About Us</button>
         {
           auth?
           <>
           <>
-          {name}
+          
+          <button className="header__buttons"><Link to={`/user/${userId}`}><img className="header__buttons--profile" src={avatarImage}/>{profileName}</Link></button>
+          
           </>
-          <div onClick={handleLogout}>
+          <button className="header__buttons" onClick={handleLogout}><img className="header__buttons--logout" src={logoutImage}/>
             Logout
-          </div>
+          </button>
           
           </>
           :
           <>
                   <div>
             <Link to={"/login"}>
-      Login Page
+      <button className="header__buttons">Login/Register</button>
       </Link>
             </div>
 
@@ -88,7 +107,47 @@ function Header(props){
     <div>Capstone</div>
     </Link> */}
 
+    </div></>
+    ):(<>    <div className={`header ${relative}`}>
+    <div className="header__logoContainer">
+    <a href="/">
+        <img src={headerLogo} className="header__logo"/>
+        </a>
     </div>
+    <div onClick={scrollToTarget}>How It Works</div>
+    <div onClick={scrollToAboutUs}>About Us</div>
+    {
+      auth?
+      <>
+      <>
+      <Link to={`/user/${userId}`}>
+      {profileName}
+      </Link>
+      </>
+      <div onClick={handleLogout}>
+        Logout
+      </div>
+      
+      </>
+      :
+      <>
+              <div>
+        <Link to={"/login"}>
+  Login/Register
+  </Link>
+        </div>
+
+      </>
+    }
+
+
+{/* <Link to={"/"}>
+<div>Capstone</div>
+</Link> */}
+
+</div></>)}
+
+    </>
   )
 }
 

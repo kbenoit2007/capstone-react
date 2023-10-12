@@ -100,7 +100,7 @@ function Profile() {
 // const date = new Date(timestamp);
 
 
-
+const containsSpace = babyName || [];
 
   return (
     <div className="mainApp__container">
@@ -109,13 +109,24 @@ function Profile() {
         <>
           <h1>Welcome {name}</h1>
           <div className="profile__container">
-            <Tile
+            {containsSpace.includes(' ') ? (<Tile
               header={babyName}
               componentToRender={
                 <AgeTile name={babyName.split(' ')[0]} birthday={birthDate}  />
                 
               }
-            />
+            />):(<Tile
+              header={"Example Mr + Mrs"}
+              componentToRender={
+                "Married for 12 Years" }
+            />)}
+            {/* <Tile
+              header={babyName}
+              componentToRender={
+                <AgeTile name={babyName.split(' ')[0]} birthday={birthDate}  />
+                
+              }
+            /> */}
             
             
             <Tile

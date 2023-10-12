@@ -18,7 +18,7 @@ function CreateBook(){
           console.log(data)
           console.log(JSON.stringify(data.data[0].id))
     
-        //  navigate('/warehouses');
+    
         })
      } catch(err){
        console.error(err)
