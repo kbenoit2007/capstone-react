@@ -35,21 +35,21 @@ function AgeTile({age,birthday,name}){
     // );
   
     if (years > 0) {
-      return `${years} years ago`;
+      return `${years} years old`;
     }
     if (months > 0) {
-      return `${months} months ago`;
+      return `${months} months old`;
     }
     if (days > 0) {
-      return `${days} days ago`;
+      return `${days} days old`;
     }
     if (hours > 0) {
-      return `${hours} hours ago`;
+      return `${hours} hours old`;
     }
     if (minutes > 0) {
-      return `${minutes} mins ago`;
+      return `${minutes} mins old`;
     } else {
-      return `${remainingSeconds + 1} secs ago`;
+      return `${remainingSeconds + 1} secs old`;
     }
   };
 

@@ -1,0 +1,30 @@
+.howItWorksCard{
+    &__container{
+
+            display: flex;
+            height: 30rem;
+            width: 20rem;
+            box-shadow: 5px 5px 17px 5px rgba(0,0,0,0.2);
+            border-radius: 30px;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+    
+    &__header{
+        font-size: 3rem;
+        display: flex;
+    }
+    &__image{
+        display: flex;
+        height:10rem;
+        // width:10rem;
+        // overflow: hidden; 
+    }
+    &__text{
+        font-size: 2.5rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+}

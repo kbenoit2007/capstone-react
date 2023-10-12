@@ -42,20 +42,25 @@ function App() {
     })
    },[])
 
+   const isHomePage = window.location.pathname === '/';
+   const isRegister = window.location.pathname === '/register';
+   const isLogin = window.location.pathname === '/login';
+
   return (
     <>
     <BrowserRouter>
-    <Header />
-
+    {!isHomePage && <Header />}
+    {/* {!isLogin && <Header />}
+    {!isRegister && <Header />} */}
     
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="register" element={<RegisterPage />} />
+      <Route path="/register" element={<RegisterPage />} />
       <Route path="/login" element={<LoginPage />} /> 
       {
         auth ?
         <>
-        <Route path="user/:userId/new" element={<NewUserFlow />} />
+      <Route path="user/:userId/new" element={<NewUserFlow />} />
       <Route path="user/:userId" element={<Profile />} />
       <Route path="user/:userId/bookbuilder" element={<BookBuilderPage />} />
       <Route path="user/:userId/book/:bookId" element={<Book />} />

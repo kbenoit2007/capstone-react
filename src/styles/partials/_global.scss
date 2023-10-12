@@ -6,6 +6,14 @@
 	box-sizing: border-box;
 }
 
+html {
+	font-size: 1vw;
+	// font-family: normal;
+	// max-width: 100%;
+	// overflow-x: hidden;
+	// color: $brainflixBlack;
+  }
+
 body {
 	font-family: "Titillium Web";
 	color: $primary-text-black;

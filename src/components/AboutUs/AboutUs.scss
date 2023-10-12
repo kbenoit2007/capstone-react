@@ -1,0 +1,30 @@
+.aboutUs{
+    &__container{
+        display: flex;
+        flex-direction: column;
+        font-size: 3rem;
+        padding-top: 10rem;
+      //
+        padding-left: 9.5rem;
+        padding-right: 9.5rem;
+
+
+
+    }
+    &__header{
+        display: flex;
+        font-size: 3.5rem;
+        justify-content: center;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+    &__text{
+        display: flex;
+        font-size: 2.5rem;
+    }
+    &__textContainer{
+        display: flex;
+        flex-direction: column;
+        line-height: 2;
+    }
+}
