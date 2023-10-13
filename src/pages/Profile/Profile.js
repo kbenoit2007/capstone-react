@@ -22,7 +22,7 @@ import twelveMonth from '../../assets/milestones/12.png'
 
 function Profile() {
   const { userId } = useParams();
-  console.log("the user id is " + userId);
+
   const [booksData, setBooksData] = useState("");
   const [thumbnailImages, setThumbnailImages] = useState("");
 
@@ -41,7 +41,7 @@ function Profile() {
       .then((data) => {
         setBooksData(data.data);
 
-        console.log(booksData);
+        console.log("the books are"+booksData);
       })
       .catch((err) => {
         console.error(err);
@@ -162,10 +162,10 @@ const containsSpace = babyName || [];
                   <div className="profile__bookListContainer">
                     {booksData.map((book) => (
                       <div className="profile__bookList">
-                        <Link to={`viewbook/${book.id}`}>
+                        <Link to={`viewbook/${book.id}`} style={{ textDecoration: 'none' ,color: 'inherit'}}>
                           
                            <div className="profile__book" ><img
-                              src={"https://placehold.co/120x120?text=Book"}
+                              src={book.cover_pic}
                               className="profile__image"
                             />{book.name} {book.description}{" "}</div> 
                             
