@@ -4,11 +4,12 @@
         // border: 5px black solid;
         flex-direction: column;
         width: 40%;
-        padding: 5px;
+        height: 100%;
+        padding: 1.1rem;
         box-shadow:  0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.14),
         0 1px 14px 0 rgba(0, 0, 0, 0.12);
         border-radius: 5px;
-        margin: 50px;
+        margin: 3rem;
     }
     &__container:hover {
         transform: translateX(4px) translateY(0);
@@ -20,19 +21,24 @@
         display:flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 2rem;
+        
     }
     &__header{
         display: flex;
         border-bottom: 1px lightgrey solid;
+        
+
     }
     &__headerText{
         display: flex;
         padding-top: 0px;
+        font-size: 2.5rem;
 
     }
     &__age{
         display: flex;
-        font-size: 30px;
+        font-size: 3rem;
     }
 }
 
