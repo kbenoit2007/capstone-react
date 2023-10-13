@@ -1,0 +1,14 @@
+.questions{
+    &__container{
+        display: flex;
+
+    }
+    &__header{
+        display: flex;
+        font-size: 3rem;
+    }
+    &__text{
+        display: flex;
+        font-size: 2rem;
+    }
+}
