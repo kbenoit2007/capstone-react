@@ -3,15 +3,18 @@ import React,{useState,useEffect} from 'react'
 function TimeStampToDate({timeStamp}){
     const [newDate,setNewDate] = useState('')
 
+    const newTimeStamp = Number(timeStamp)
 
-    const timeStamConverter = (timeStamp) => {
-        const date = new Date(timeStamp);
-        setNewDate(date.toLocaleString('en-US', {  dateStyle: 'long'})  )
-        return newDate
-      };
-
+      const  convertUnixTimeToReadableDate=(newTimeStamp) => {
+        const date = new Date(newTimeStamp);
+        const options = { year: 'numeric', month: 'long', day: 'numeric',  };
+        return date.toLocaleString(undefined, options);
+      }
+      
+      const formattedDate = convertUnixTimeToReadableDate(newTimeStamp);
+     
       useEffect(()=>{
-        timeStamConverter(timeStamp)
+        setNewDate(formattedDate)
 
     },[])
 

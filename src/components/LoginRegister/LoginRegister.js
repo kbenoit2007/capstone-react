@@ -17,13 +17,8 @@ function LoginRegister(){
     const [passwordRegister, setPasswordRegister] = useState("")
 
     const navigate = useNavigate();
-    
-    // console.log("using Window "+window.location.href)
     const location = useLocation()
-    // console.log("using location "+location.pathname)
 
-    
-    // const registerPresent = () => {
         useEffect(() => {
             if(location.pathname == "/register"){
                 console.log("using location "+location.pathname)
@@ -34,15 +29,7 @@ function LoginRegister(){
         }, []); 
 
     
-    //   };
-    
-    //   const handleLogout = () => {
-    //     setIsLoggedIn(false);
-    //   };
-    
 
-// const history = useHistory()
-// console.log("using history "+ history.location.pathname)
     axios.defaults.withCredentials = true
     async function handleLogin(event){
         event.preventDefault()
@@ -121,22 +108,23 @@ function LoginRegister(){
       </div>
       <div className="input__rightSide">
         <div className="input__rightSideContainer">
-      {registerPageVisible ? (<> <h2>Register</h2>
+      {registerPageVisible ? (<> <div className="input__header">Register</div>
         <div className="input__textContainer">
             <form onSubmit={handleRegister}>
-            <TextInput className="input__name" placeholder="Enter Name" type="text" onTextChange={handleName}/>    
-            <TextInput className="input__username" placeholder="Enter Username" type="text" onTextChange={handleRegisterUserName}/>
-            <TextInput className="input__password" placeholder="Enter Password" type="password" onTextChange={handleRegisterPassword} />
-            <SubmitButton />
+            <TextInput className="input__name textInputStyle" placeholder="Enter Name" type="text" onTextChange={handleName}/>    
+            <TextInput className="input__username textInputStyle" placeholder="Enter Username" type="text" onTextChange={handleRegisterUserName}/>
+            <TextInput className="input__password textInputStyle" placeholder="Enter Password" type="password" onTextChange={handleRegisterPassword} />
+            <div className="input__submitButton"><SubmitButton /></div>
             </form>
-        </div></>):(<>        <h2>Sign In</h2>
+            <div className="input__subtext">Already Registered? <Link to="../login" >Login Here</Link></div>
+        </div></>):(<>        <div className="input__header">Sign In</div>
         <div className="input__textContainer">
             <form onSubmit={handleLogin}>
-            <TextInput className="input__username" placeholder="Enter Username" type="text" onTextChange={handleUserName}/>
-            <TextInput className="input__password" placeholder="Enter Password" type="password" onTextChange={handlePassword} />
-            <SubmitButton />
+            <TextInput className="input__username textInputStyle" placeholder="Enter Username" type="text" onTextChange={handleUserName}/>
+            <TextInput className="input__password textInputStyle" placeholder="Enter Password" type="password" onTextChange={handlePassword} />
+           <div className="input__submitButton"><SubmitButton /></div> 
             </form>
-            <div>Do you have an account? <Link to="../register" >Register Here</Link></div>
+            <div className="input__subtext">Do you have an account? <Link to="../register" >Register Here</Link></div>
         </div></>)}
 
         </div>

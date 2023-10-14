@@ -7,6 +7,7 @@ function AgeTile({age,birthday,name}){
 
 
   const newDate = Date(birthday).toLocaleString('en-US', { dateStyle: 'long'});
+  console.log("test123"+newDate)
 
 
   const timestampDifference = (time) => {

@@ -12,14 +12,16 @@
         width: 50%;
     }
     &__logo{
-        height: 20px;
+        height: 30px;
     }
     &__buttons{
         background-color: transparent; 
         box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0); 
         cursor: pointer;
         border: 0px solid #3498db; 
-        border-radius: 30px;
+        border-radius: 26px;
+        font-size: 1.5rem;
+        font-weight: 600;
         &--profile{
             width:2rem;
             height: 1.2rem;

@@ -9,10 +9,25 @@
         height: 500px;
 
     }
+    &__header{
+        display: flex;
+        margin-top: 3rem;
+        font-size: 3rem;
+        margin-bottom: 3rem;
+    }
     &__textContainer{
         display: flex;
         flex-direction: column;
-        width: 40%;
+        width: 60%;
+        align-items: center;
+    }
+    &__submitButton{
+        display: flex;
+        justify-content: center;
+        margin-bottom: .5rem;
+    }
+    &__subtext{
+        font-size:1.1rem;
     }
     &__image{
         // height: 200px;
@@ -33,6 +48,15 @@
     &__leftSide{
         display: flex;
         width:50%;
+    }
+    &__username{
+        margin-bottom: 2rem;
+    }
+    &__password{
+        margin-bottom: 2rem;
+    }
+    &__name{
+        margin-bottom: 2rem;
     }
 }
 .top{

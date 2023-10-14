@@ -1,12 +1,13 @@
 import {  useState } from 'react';
 import axios from "axios"
+import './ImageUpload.scss'
+import { Link, useNavigate, useParams,useHistory ,useLocation } from "react-router-dom";
 
 
 function ImageUpload({bookDetailsData,onBookDetailsClickNext }){
   const [previewImages, setPreviewImages] = useState(null);
-    // const [fileList, setFileList] = useState(null)
-  //  console.log("The data passed from above"+ JSON.stringify(props.bookDetailsData.id))
     const [selectedFile, setSelectedFile] = useState(null);
+    const navigate = useNavigate();
 
     const handleFileChange = (e) => {
       setSelectedFile(e.target.files);
@@ -35,7 +36,7 @@ function ImageUpload({bookDetailsData,onBookDetailsClickNext }){
         if(!selectedFile){
             return
         }
-      // You can implement your image upload logic here, e.g., sending the file to a server.
+
       if (selectedFile) {
         const formData = new FormData();
         files.forEach((files,i)=>{
@@ -55,7 +56,8 @@ function ImageUpload({bookDetailsData,onBookDetailsClickNext }){
               files:data.data.files,
               bookDetails:bookDetailsData
             }
-            onBookDetailsClickNext('PreviewBook',newData)
+            navigate(`../user/${bookDetailsData.user_id}/viewbook/${bookDetailsData.id}`);
+            // onBookDetailsClickNext('PreviewBook',newData)
           })
           .catch((error) => {
             console.error('Error uploading image:', error);
@@ -68,7 +70,13 @@ function ImageUpload({bookDetailsData,onBookDetailsClickNext }){
         <>
         
       <div>
-      <input type="file" onChange={handleFileChange} multiple />
+        <div className="imageUpload__header">Upload Your Images Here:</div>
+        <div className="imageUpload__actionButtons">
+        <div><input type="file"  onChange={handleFileChange} multiple /></div>
+        <div><button onClick={handleUpload} className="rounded-button">Upload</button></div>
+        </div>
+      
+      
       {/* <ul>
         {files.map((file, i) => (
           <li key={i}>
@@ -80,14 +88,14 @@ function ImageUpload({bookDetailsData,onBookDetailsClickNext }){
 
     
 {previewImages &&(
-        <div className="image-preview-container">
+        <div className="imageUpload__previewContainer">
         {previewImages.map((image, index) => (
-          <img key={index} src={image} alt={`Preview ${index}`} width="200" />
+          <img key={index} src={image} alt={`Preview ${index}`} className="imageUpload__previewImage" />
         ))}
       </div>
 
 )}
-        <button onClick={handleUpload}>Upload</button>
+        
       </div>
       </>
     );

@@ -9,9 +9,10 @@ import {useParams, Link} from 'react-router-dom'
 
 
 function BookDetails({selectCoverPageData,onSelectClickNext}){
-    const [bookName, setBookName] = useState("")
-    const [bookDesc, setBookDesc] = useState("")
-    const [bookDetailsData, setBookDetailsDate] = useState('')
+    const [bookName, setBookName] = useState()
+    const [bookDesc, setBookDesc] = useState()
+    const [errorBabyName,setBabyNameError] = useState(true)
+    const [errorDesc, setDescError] = useState(true)
     
    
 
@@ -19,31 +20,68 @@ function BookDetails({selectCoverPageData,onSelectClickNext}){
    // console.log("received data "+passedData)
    const {userId} = useParams()
 
+   const handleBookName = (event) =>{
+    setBookName(event.target.value)
+    console.log(bookName)
+   }
+
+   const handleDesc = (event) =>{
+    setBookDesc(event.target.value)
+    console.log(bookDesc)
+   }
+
+
+
+
    async function handleSubmit(event){
     event.preventDefault()
-    console.log("the user id is "+userId)
-    console.log("the new uuid is "+uuidv4())
-    const bookObject ={
-        id: uuidv4(),
-        name:bookName,
-        description:bookDesc,
-        user_id:userId,
-        cover_pic:selectCoverPageData
+
+    if(!event.target[0].value){
+        document.getElementById("bookname-input").classList.add("inputError")
+        setBabyNameError(true)
+    }else{
+        document.getElementById("bookname-input").classList.remove("inputError")
+        setBabyNameError(false)
     }
-    try{
-        await axios.post(`${process.env.REACT_APP_URL}:${process.env.REACT_APP_PORT}/books`, bookObject).then((data)=>{
-          console.log(data)
-          console.log(JSON.stringify(data.data[0].id))
-        //    const newArray = [selectCoverPageData, bookObject]
-        //    console.log("data to be passed along "+newArray)
-          // setBookDetailsDate(newArray)
-           onSelectClickNext('ImageUpload',bookObject)
 
+    if(!event.target[1].value){
+        document.getElementById("desc-input").classList.add("inputError")
+        setDescError(true)
+    }else{
+        document.getElementById("desc-input").classList.remove("inputError")
+        setDescError(false)
+    }
 
-        })
-     } catch(err){
-       console.error(err)
-     }
+    if(!bookDesc && !bookName == ""){
+        //Error present stay...
+
+    } else{
+        console.log("the user id is "+userId)
+        console.log("the new uuid for book is "+uuidv4())
+        const bookObject ={
+            id: uuidv4(),
+            name:bookName,
+            description:bookDesc,
+            user_id:userId,
+            cover_pic:selectCoverPageData
+        }
+        try{
+            await axios.post(`${process.env.REACT_APP_URL}:${process.env.REACT_APP_PORT}/books`, bookObject).then((data)=>{
+              console.log(data)
+              console.log(JSON.stringify(data.data[0].id))
+            //    const newArray = [selectCoverPageData, bookObject]
+            //    console.log("data to be passed along "+newArray)
+              // setBookDetailsDate(newArray)
+               onSelectClickNext('ImageUpload',bookObject)
+    
+    
+            })
+         } catch(err){
+           console.error(err)
+         }
+
+    }
+
 
    }
 
@@ -55,10 +93,11 @@ function BookDetails({selectCoverPageData,onSelectClickNext}){
     // return selectedImage
 }
 
-    return(<div className="mainApp__container">
+    return(
         <div className="bookDetails__container">
+            <div className="bookDetails__header">Enter your Book Details:</div>
 
-        
+        <div className="bookDetails__LRContainer">
         <div className="bookDetails__leftContainer">
             <div>
                 <img src={selectCoverPageData} className="bookDetails__bookCoverImage"/>
@@ -68,23 +107,26 @@ function BookDetails({selectCoverPageData,onSelectClickNext}){
         <div className="bookDetails__rightContainer">
             <div className="bookDetails__inputContainer">
             <form onSubmit={handleSubmit}>
-        <label>Book Name</label>
-        <input type="text" onChange={(e)=>{
-            setBookName(e.target.value)
-        }}
+                <div> 
+                <label className ="bookDetails__inputLabel--bookName">Book Name:</label>
+        <input className ="bookDetails__input textInputStyle" id="bookname-input" type="text" placeholder="Enter Book Name" onChange={handleBookName}
         />
-        <label>Book Description</label>
-        <input type="text" onChange={(e)=>{
-            setBookDesc(e.target.value)
-        }}
+                </div>
+         <div>
+         <label className ="bookDetails__inputLabel--Desc">Book Description:</label>
+        <input className ="bookDetails__input textInputStyle" type="text" id="desc-input" placeholder="Enter Description" onChange={handleDesc}
         />
-        <button type="Submit">Submit </button>
+         </div>
+
+         <div className="bookDetails__submitButton">
+    <button className="rounded-button" type="Submit">Submit </button>
+    </div>
       </form>
             </div>
-
-</div>
     </div>
-    <button type="submit" onClick={handleNextClick}>Next</button>
+    </div>
+
+   
     </div>
     
     )
