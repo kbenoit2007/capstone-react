@@ -18,7 +18,7 @@ function BookCoverPage({ text, img, selectImage, className,hightDiv }) {
 
 
   return (
-    <div className={`bookCover__container--${selectedImage === true ? 'selected' : ''}`}  onClick={sendToSelectCoverPage}>
+    <div className={`bookCover__container ${selectedImage === true ? 'bookCoverSelected' : ''}`}  onClick={sendToSelectCoverPage}>
       <img src={img} className="bookCover__image" />
     </div>
   );

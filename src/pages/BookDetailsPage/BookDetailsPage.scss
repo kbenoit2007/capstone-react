@@ -1,19 +1,52 @@
 .bookDetails{
     &__container{
         display:flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 3rem;
+    }
+    &__LRContainer{
+        display: flex;
         flex-direction: row;
     }
     &__leftContainer{
 
     }
     &__rightContainer{
+        display: flex;
+        font-size: 2rem;
+        margin-left: 4rem;
 
     }
     &__inputContainer{
-
+        display: flex;
     }
     &__bookCoverImage{
         width: 30rem;
         height: 30rem;
+        border-radius: 1.5rem;
+    }
+    &__header{
+        display: flex;
+        font-size: 3rem;
+        margin-bottom: 3rem;
+    }
+    &__input{
+        margin-top: 2rem;
+        width:20rem;
+    }
+    &__inputLabel{
+        &--bookName{
+            margin-right: 5.5rem;
+        }
+        &--Desc{
+            margin-right: 1rem;
+        }
+    }
+    &__submitButton{
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
     }
 }
+

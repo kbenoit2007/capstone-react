@@ -4,10 +4,77 @@
 
 .selectCoverPage{
     &__container{
+        display: flex;
+        flex-direction: column;
+        margin-top: 3rem
+    }
+    &__imgContainer{
         display:flex;
         flex-wrap: wrap;
         margin-bottom: 50px;
         justify-content: space-around;
+        width:100%;
+        justify-content: center;
+    }
+    &__header{
+        display: flex;
+        justify-content: center;
+        font-size: 3rem;
+        margin-bottom: 3rem;
+        margin-top: 2rem;
+    }
+    &__nextButton{
+        display: flex;
+        justify-content: center;
+    }
+
+    &__cover{
+        &--radioButton{
+            width: 23rem;
+            height: 14rem;
+            border-radius: 15px;
+            position: relative;
+            text-align: center;
+            padding: 1rem;
+            box-shadow: 0 1px #c3c3c3;
+            cursor: pointer;
+            background-color: #eaeaea;
+            float: left;
+            margin-right: 15px;
+        }
+    }
+    &__submitButton{
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        padding-bottom: 1rem;
     }
 
 }
+
+
+/* ImageSelection.css */
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+  }
+  
+  .image {
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.3s ease;
+  }
+  
+  .image img {
+    // width: 100px;
+    // height: auto;
+    height: 12.3rem;
+    width:21.01rem;
+  }
+  
+  .image.selected {
+    border-color: #007bff; /* Example: Highlight the selected image */
+  }
+

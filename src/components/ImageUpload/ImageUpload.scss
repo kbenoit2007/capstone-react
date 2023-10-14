@@ -1,0 +1,39 @@
+.imageUpload{
+    &__previewContainer{
+        display: flex;
+        flex-wrap: wrap;
+        gap:2rem
+    }
+    &__previewImage{
+        width: 20rem;
+        height: 20rem;
+    }
+    &__actionButtons{
+        display: flex;
+        margin-bottom: 2rem;
+    }
+    &__header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 3rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+}
+
+input[type="file" i] {
+    appearance: none;
+    background-color: initial;
+    cursor: default;
+    align-items: baseline;
+    color: inherit;
+    text-overflow: ellipsis;
+    white-space-collapse: preserve;
+    text-wrap: nowrap;
+    text-align: start !important;
+    padding: initial;
+    border: initial;
+    overflow: hidden !important;
+}

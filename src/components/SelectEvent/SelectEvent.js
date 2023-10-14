@@ -12,17 +12,6 @@ function SelectEvent({onNextClick}){
     const [firstStepStatus,setFirstStepStatus] = useState('')
     const [event,setEvent]=useState('')
 
-    // const handleNextClick = ()=>{
-    //     // console.log("after next "+selectedImage)
-        
-    //     // navigate('BookDetailsPage')
-        
-    //     // return selectedImage
-
-
-    // }
-
-
     const handleSubmitEvent =(e)=>{
         e.preventDefault()
         const eventObject={
@@ -37,22 +26,8 @@ function SelectEvent({onNextClick}){
            setFirstStepStatus(true)
             const data = {...eventObject}
            onNextClick('NewBorn',data)
-        
-    
         })
     }
-
-    //  useEffect(()=>{
-    //     // axios.get(`${process.env.REACT_APP_URL}:${process.env.REACT_APP_PORT}/user/${userId}/viewbook/${props.book}`).then((data)=>{
-    //     //      SetBookData(data)
-    //     //  })
-    //     console.log("useState data "+firstStepData1)
-
-    // },[firstStepData1])
-
-     
-
-
 
     return (
       <>
