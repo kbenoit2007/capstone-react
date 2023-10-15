@@ -73,7 +73,7 @@ function SelectEvent({onNextClick}){
                 </div>
               </div>
             
-              <div className="selectEvent__button--submit"><button type="submit" >Submit</button></div>
+              <div className="selectEvent__button--submit"><button type="submit" className="rounded-button" >Submit</button></div>
             </form>
           </div>
          

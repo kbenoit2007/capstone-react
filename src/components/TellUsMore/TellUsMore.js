@@ -30,9 +30,9 @@ function TellUsMore({newBornData}){
           <Questions name={newBornData.babyname}  questionsData ={handleQuestionsData}        />
 
           {/* {newBornData.user_id} */}
-          <TimeStampToDate timeStamp={newBornData.birthdate} />
+          {/* <TimeStampToDate timeStamp={newBornData.birthdate} /> */}
           <div>
-            <button onClick={handleSubmit}>Submit</button>
+            <button onClick={handleSubmit} className="rounded-button">Submit</button>
           </div>
         </div>
       </>
