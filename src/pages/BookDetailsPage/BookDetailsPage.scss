@@ -25,6 +25,36 @@
         width: 30rem;
         height: 30rem;
         border-radius: 1.5rem;
+        position: relative;
+    }
+    &__bookCoverBar{
+        display: flex;
+        width:20rem;
+        height: 7rem;
+        background-color: white;
+        
+        border: 1px black solid;
+        border-radius: .4rem;
+        position: absolute;
+        z-index: 9;
+        top:33rem;
+        left:15.4rem;
+    }
+    &__bookCoverText{
+        display: flex;
+        position: absolute;
+        font-size: 2rem;
+        color:black;
+        z-index: 10;
+        top:33rem;
+        left:16rem;
+        &--desc{
+            position: absolute;
+            z-index: 10;
+            font-size: 1.5rem;
+            top:37rem;
+            left:16rem;
+        }
     }
     &__header{
         display: flex;

@@ -1,65 +1,60 @@
-import React from 'react';
-import {useState} from 'react'
-import axios from 'axios'
-import ImageUpload from '../../components/ImageUpload/ImageUpload';
-import {useParams, Link} from 'react-router-dom'
+import React from "react";
+import { useState } from "react";
+import axios from "axios";
+import ImageUpload from "../../components/ImageUpload/ImageUpload";
+import { useParams, Link } from "react-router-dom";
 
 function Book() {
+  const [bookName, setBookName] = useState("");
+  const [bookDesc, setBookDesc] = useState("");
 
-  const [bookName,setBookName]= useState("")
-  const [bookDesc,setBookDesc]= useState("")
+  const { userId, bookId } = useParams();
 
-  const {userId, bookId} = useParams()
-  console.log("The Params userid "+userId)
-  console.log("The Params bookid "+bookId)
+  async function handleSubmit(event) {
+    event.preventDefault();
 
+    const bookObject = {
+      id: bookId,
+      name: bookName,
+      description: bookDesc,
+      user_id: userId,
+    };
 
-  
-  async function handleSubmit(event){
-    event.preventDefault()
-  //  console.log(event)
- //   console.log(loginUserName)
-    const bookObject ={
-        id: bookId,
-        name:bookName,
-        description:bookDesc,
-        user_id:userId
-    } 
+    console.log(bookObject);
 
-    console.log(bookObject)
-
-    try{
-        await axios.post(`${process.env.REACT_APP_URL}:${process.env.REACT_APP_PORT}/books`, bookObject).then((data)=>{
-          // console.log(data)
-          // console.log(JSON.stringify(data.data[0].id))
-       
-        //  navigate('/warehouses');
-        })
-     } catch(err){
-       console.error(err)
-     }
+    try {
+      await axios
+        .post(
+          `${process.env.REACT_APP_URL}:${process.env.REACT_APP_PORT}/books`,
+          bookObject
+        )
+        .then((data) => {});
+    } catch (err) {
+      console.error(err);
     }
+  }
   return (
     <div className="mainApp__container">
       <h1>Your Book</h1>
       <form onSubmit={handleSubmit}>
         <label>Name</label>
-        <input type="text" onChange={(e)=>{
-            setBookName(e.target.value)
-        }}
+        <input
+          type="text"
+          onChange={(e) => {
+            setBookName(e.target.value);
+          }}
         />
         <label>Description</label>
-        <input type="text" onChange={(e)=>{
-            setBookDesc(e.target.value)
-        }}
+        <input
+          type="text"
+          onChange={(e) => {
+            setBookDesc(e.target.value);
+          }}
         />
         <button type="Submit">Submit </button>
       </form>
 
-      {/* <Book /> */}
-      <ImageUpload bookId={bookId}/>
-      {/* <ImageUpload userId={userId}/> */}
-
+      <ImageUpload bookId={bookId} />
     </div>
   );
 }

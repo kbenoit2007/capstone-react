@@ -1,12 +1,14 @@
-import React from 'react'
-import './SubmitButton.scss'
+import React from "react";
+import "./SubmitButton.scss";
 
-function SubmitButton(){
-    return(
+function SubmitButton() {
+  return (
     <>
-    <button type="Submit" className='rounded-button'>Submit </button>
+      <button type="Submit" className="rounded-button">
+        Submit{" "}
+      </button>
     </>
-    )
+  );
 }
 
-export default SubmitButton
+export default SubmitButton;

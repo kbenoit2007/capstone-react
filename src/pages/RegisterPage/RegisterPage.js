@@ -18,21 +18,6 @@ function RegisterPage() {
   return (
     <div>
       <LoginRegister />
-      {/* <h1>RegisterPage</h1>
-      <form onSubmit={handleSubmit}>
-        <label>Username</label>
-        <input type="text" onChange={(e)=>{
-            setUsername(e.target.value)
-        }}
-        />
-        <label>Password</label>
-        <input type="text" onChange={(e)=>{
-            setPassword(e.target.value)
-        }}
-        />
-        <button type="Submit">Submit </button>
-      </form> */}
-
     </div>
   );
 }
