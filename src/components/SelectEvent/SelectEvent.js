@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import baby1 from "../../assets/eventpics/baby1.png";
@@ -54,7 +54,7 @@ function SelectEvent({ onNextClick }) {
                     checked={event === "New Born"}
                   />
                   <div className="selectEvent__event--radioButton">
-                    <img src={baby1} className="selectEvent__event--image" />
+                    <img src={baby1} className="selectEvent__event--image" alt="newborn-logo"/>
                     <p>New Born</p>
                   </div>
                 </label>
@@ -77,6 +77,7 @@ function SelectEvent({ onNextClick }) {
                     <img
                       src={marriage2}
                       className="selectEvent__event--image"
+                      alt="marriage-logo"
                     />
                     <p>Marriage</p>
                   </div>

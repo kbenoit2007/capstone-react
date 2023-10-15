@@ -4,9 +4,7 @@ import axios from "axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import test1 from "../../assets/heropics/3-6.png";
-
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./ViewBook.scss";
 import GetBook from "../../components/GetBook/GetBook";
 
@@ -79,7 +77,7 @@ function ViewBook() {
       </h1>
       <Slider {...settings}>
         <div className="card">
-          <img src={coverPic} className="w-100" width="100%" height="500px" />
+          <img src={coverPic} className="w-100" width="100%" height="500px" alt="cover-pic"/>
           {/* <h3>Milestone</h3>
                 <p>text</p> */}
         </div>
@@ -91,6 +89,7 @@ function ViewBook() {
               className="w-100"
               width="100%"
               height="500px"
+              alt="book-pics"
             />
             {/* <h3>Milestone</h3>
                 <p>text</p> */}
