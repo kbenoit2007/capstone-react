@@ -87,7 +87,7 @@ function Header({ scrollToTarget, scrollToAboutUs }) {
             {auth ? (
               <>
                 <>
-                  <button className="header__buttons">
+                  <button className="header__buttons name">
                     <Link to={`/user/${userId}`}>
                       <img
                         className="header__buttons--profile"

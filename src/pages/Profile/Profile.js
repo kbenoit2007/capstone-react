@@ -93,7 +93,7 @@ function Profile() {
     <div className="mainApp__container">
       {auth ? (
         <>
-          <h1>Welcome {profileName}</h1>
+          <h1 className="profile__header">Welcome {profileName}</h1>
           <div className="profile__container">
             {containsSpace.includes(" ") ? (
               <Tile
@@ -113,7 +113,7 @@ function Profile() {
               header="Create Book"
               componentToRender={
                 <Link to={"bookbuilder/"}>
-                  <button className="rounded-button">
+                  <button id="profile__createBookButton" className= "rounded-button">
                     Create your own Book
                   </button>
                 </Link>

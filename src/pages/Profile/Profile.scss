@@ -8,15 +8,43 @@
         justify-content: space-around;
         flex-wrap: wrap;
     }
+    &__header{
+        display: flex;
+        font-size: 5rem;
+        justify-content: center;
+        @include tablet{
+            font-size: 2rem;
+        }
+        @include desktop{
+            font-size: 2rem;
+        }
+    }
     &__image{
-        height:8rem;
-        width:8rem; 
+        height:15rem;
+        width:15rem; 
         margin-right: 1rem;
         border-radius: .4rem;
+        @include tablet{
+            height:8rem;
+            width:8rem; 
+            margin-right: 1rem;
+        }
+        @include desktop{
+            height:8rem;
+            width:8rem; 
+            margin-right: 1rem;
+        }
     }
     &__bookListContainer{
         display: flex;
         flex-direction: column;
+        width:90%;
+        @include tablet{
+
+        }
+        @include desktop{
+
+        }
     }
     &__bookList:not(:first-of-type){
         padding-top:2rem;
@@ -28,14 +56,32 @@
     &__book{
         display: flex;
         align-items: center;
-        font-size: 1.5rem;
+        font-size: 3.5rem;
         font-weight: 600;
+        @include tablet{
+          font-size: 1.5rem;
+        }
+        @include desktop{
+            font-size: 1.5rem;
+        }
     }
     &__milestones{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
+    }
+
+}
+
+
+#profile__createBookButton{
+    font-size: 3rem;
+    @include tablet{
+     font-size: 2rem;
+    }
+    @include desktop{
+        font-size: 1.8rem;
     }
 }
 

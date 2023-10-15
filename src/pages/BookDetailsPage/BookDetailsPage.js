@@ -91,7 +91,7 @@ function BookDetails({ selectCoverPageData, onSelectClickNext }) {
         <div className="bookDetails__rightContainer">
           <div className="bookDetails__inputContainer">
             <form onSubmit={handleSubmit}>
-              <div>
+              <div className="bookDetails__inputBookNameContainer">
                 <label className="bookDetails__inputLabel--bookName">
                   Book Name:
                 </label>
@@ -103,7 +103,7 @@ function BookDetails({ selectCoverPageData, onSelectClickNext }) {
                   onChange={handleBookName}
                 />
               </div>
-              <div>
+              <div className="bookDetails__inputBookDetailsContainer">
                 <label className="bookDetails__inputLabel--Desc">
                   Book Description:
                 </label>
