@@ -1,0 +1,18 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+.title{
+    &__birthday{
+        display: flex;
+        font-size: 2rem;
+        @include tablet{
+    
+        }
+        @include desktop{
+    
+        }
+    }
+
+}
+

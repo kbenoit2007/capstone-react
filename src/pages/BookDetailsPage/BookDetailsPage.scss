@@ -1,3 +1,8 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+
 .bookDetails{
     &__container{
         display:flex;
@@ -21,6 +26,17 @@
     &__inputContainer{
         display: flex;
     }
+    &__inputBookNameContainer{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+    }
+    &__inputBookDetailsContainer{
+        display: flex;
+        flex-direction: column;
+      
+
+    }
     &__bookCoverImage{
         width: 30rem;
         height: 30rem;
@@ -29,16 +45,25 @@
     }
     &__bookCoverBar{
         display: flex;
-        width:20rem;
+        width:18rem;
         height: 7rem;
         background-color: white;
-        
         border: 1px black solid;
         border-radius: .4rem;
         position: absolute;
         z-index: 9;
-        top:33rem;
-        left:15.4rem;
+        top:39rem;
+        left:23.4rem;
+        @include tablet{
+            top:36rem;
+            left:23.4rem;
+            width:20rem;
+        }
+        @include desktop{
+            top:33rem;
+            left:23.4rem;
+            width:20rem;
+        }
     }
     &__bookCoverText{
         display: flex;
@@ -46,14 +71,30 @@
         font-size: 2rem;
         color:black;
         z-index: 10;
-        top:33rem;
-        left:16rem;
+        top:39rem;
+        left:25rem;
+        @include tablet{
+            top:36rem;
+            left:24rem;
+        }
+        @include desktop{
+            top:33rem;
+            left:24rem;
+        }
         &--desc{
             position: absolute;
             z-index: 10;
             font-size: 1.5rem;
-            top:37rem;
-            left:16rem;
+            top:43rem;
+            left:25rem;
+            @include tablet{
+                top:39rem;
+                left:24rem;
+            }
+            @include desktop{
+                top:37rem;
+                left:24rem;
+            }
         }
     }
     &__header{
@@ -62,8 +103,14 @@
         margin-bottom: 3rem;
     }
     &__input{
-        margin-top: 2rem;
+        margin-top: 1.5rem;
         width:20rem;
+        @include tablet{
+            margin-top: 2rem;
+        }
+        @include desktop{
+            margin-top: 2rem;
+        }
     }
     &__inputLabel{
         &--bookName{

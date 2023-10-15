@@ -1,3 +1,7 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
 .header{
     display: flex;
     flex-direction: row;
@@ -5,14 +9,32 @@
     align-items: center;
     position: absolute;
     width:100%;
-    font-size:1.8rem;
+    font-size:4rem;
     font-weight: 600;
+    @include tablet{
+        font-size: 1.5rem;
+    }
+    @include desktop{
+        font-size: 1.5rem;
+    }
   
     &__logoContainer{
-        width: 50%;
+        width: 20%;
+        @include tablet{
+
+        }
+        @include desktop{
+            width: 50%;
+        }
     }
     &__logo{
-        height: 30px;
+        height:20px;
+        @include tablet{
+
+        }
+        @include desktop{
+            height: 30px;
+        }
     }
     &__buttons{
         background-color: transparent; 

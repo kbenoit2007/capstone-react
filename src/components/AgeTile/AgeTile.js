@@ -1,5 +1,6 @@
 import React from "react";
 import TimeStampToDate from "../TimeStampToDate/TimeStampToDate";
+import './AgeTile.scss'
 
 function AgeTile({ age, birthday, name }) {
   const timestampDifference = (time) => {
@@ -46,7 +47,7 @@ function AgeTile({ age, birthday, name }) {
   return (
     <>
       <div className="tile__age">{currentAge}</div>
-      <div>
+      <div className="title__birthday">
         {`${name} birthday:`}
         <TimeStampToDate timeStamp={birthday} />
       </div>
