@@ -65,14 +65,14 @@ function NewBorn({selectEventData,newBornData }){
    <div className="newBornPage__inputContainer">
    <div>
     <label className="newBornPage__labels" htmlFor="BabyName">{`Name`}</label>   
-    <input  type="text" id="BabyName" placeholder="Enter Your Baby's Name" className="newBornPage__name" onChange={(e) => setBabyName(e.target.value)}></input>
+    <input  type="text" id="BabyName" placeholder="Enter Your Baby's Name" className="newBornPage__name textInputStyle" onChange={(e) => setBabyName(e.target.value)}></input>
     </div>
 
     <div>
     <label className="newBornPage__labels" htmlFor="Birthday">BirthDay</label> 
-    <DatePicker id="Birthday" selected={birthDate} dateFormat="MMMM dd, yyyy" className="newBornPage__date" onChange={handleDateChange} />
+    <DatePicker id="Birthday" selected={birthDate} dateFormat="MMMM dd, yyyy" className="newBornPage__date textInputStyle" onChange={handleDateChange} />
     </div>
-    <button className="newBornPage__submitButton" type="Submit" >Submit</button>
+    <button className="newBornPage__submitButton rounded-button" type="Submit" >Submit</button>
     
     </div>
     </form>
