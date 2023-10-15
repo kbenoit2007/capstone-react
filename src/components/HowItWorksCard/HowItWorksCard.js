@@ -8,7 +8,7 @@ function HowItWorksCard({header,image,text}){
       <>
         <div className="howItWorksCard__container">
           <div className="howItWorksCard__header">{header}</div>
-          <div className="howItWorksCard__image"><img src={image}></img></div>
+          <div className="howItWorksCard__image"><img src={image} alt="howitworks-icon"></img></div>
           <div className="howItWorksCard__text">{text}</div>
         </div>
       </>

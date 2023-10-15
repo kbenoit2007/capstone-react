@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import ImageUpload from "../../components/ImageUpload/ImageUpload";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function Book() {
   const [bookName, setBookName] = useState("");

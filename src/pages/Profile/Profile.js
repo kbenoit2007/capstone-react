@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import "./Profile.scss";
 import Tile from "../../components/Tile/Tile";
 import AgeTile from "../../components/AgeTile/AgeTile";
-import TimeStampToDate from "../../components/TimeStampToDate/TimeStampToDate";
 import Milestones from "../../components/Milestones/Milestones";
 import oneMonth from "../../assets/milestones/1.png";
 import twoMonth from "../../assets/milestones/2.png";
@@ -24,8 +22,6 @@ function Profile() {
   const { userId } = useParams();
 
   const [booksData, setBooksData] = useState("");
-  const [thumbnailImages, setThumbnailImages] = useState("");
-
   const [auth, setAuth] = useState(false);
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
@@ -139,6 +135,7 @@ function Profile() {
                             <img
                               src={book.cover_pic}
                               className="profile__image"
+                              alt="profile"
                             />
                             {book.name} {book.description}{" "}
                           </div>

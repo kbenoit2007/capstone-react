@@ -3,7 +3,7 @@ import TimeStampToDate from "../TimeStampToDate/TimeStampToDate";
 
 function AgeTile({ age, birthday, name }) {
   const timestampDifference = (time) => {
-    const now = new Date();
+   // const now = new Date();
     const newTimeDifference = (new Date().getTime() - time) / 1000;
     return newTimeDifference;
   };

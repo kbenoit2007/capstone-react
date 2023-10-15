@@ -1,27 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./SelectCoverPage.scss";
-import BookCoverPage from "../../components/BookCoverPage/BookCoverPage";
 import babyraccon from "../../assets/bookcovers/baby-racoon.jpeg";
 import daisySummer from "../../assets/bookcovers/daisy-summer.jpg";
 import paperSwan from "../../assets/bookcovers/Adobe3-1682786385.jpeg";
 import lotusFlower from "../../assets/bookcovers/lotus-flower-4k-9p.jpg";
 import colorSpalsh from "../../assets/bookcovers/color-splash.jpeg";
 import cartoonAnimals from "../../assets/bookcovers/cartoonAnimals.jpg";
-import BookDetailsPage from "../BookDetailsPage/BookDetailsPage";
 
 function SelectCoverPage({ onNextClick }) {
-  const defaultImage =
-    `${process.env.REACT_APP_URL}:${process.env.REACT_APP_CURRENTPORT}` +
-    babyraccon;
-  const [nextButtonData, setNextButtonData] = useState();
-  const [currentImage, setCurrentImage] = useState();
-
   const handleSelectedImage = (image) => {
     setSelectedImage(image);
     console.log("is selected " + selectedImage);
   };
 
-  const handleSubmitEvent = () => {};
+
 
   const [selectedImage, setSelectedImage] = useState(null);
 

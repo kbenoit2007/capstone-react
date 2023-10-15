@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import TimeStampToDate from "../TimeStampToDate/TimeStampToDate";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./TellUsMore.scss";
 import Questions from "../Questions/Questions";
 

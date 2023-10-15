@@ -1,6 +1,6 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import {  Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Header.scss";
 import headerLogo from "../../assets/logo/Logo.png";
@@ -63,24 +63,25 @@ function Header({ scrollToTarget, scrollToAboutUs }) {
 
   return (
     <>
-      {isHomePage == true ? (
+      {isHomePage === true ? (
         <>
           {" "}
           <div className={`header`}>
             <div className="header__logoContainer">
               <a href="/">
-                <img src={headerLogo} className="header__logo" />
+                <img src={headerLogo} className="header__logo" alt="icon"/>
               </a>
             </div>
             <button className="header__buttons" onClick={scrollToTarget}>
               <img
                 className="header__buttons--howItWorks"
                 src={howItWorksImage}
+                alt="icon"
               />
               How It Works
             </button>
             <button className="header__buttons" onClick={scrollToAboutUs}>
-              <img className="header__buttons--aboutUs" src={aboutUsImage} />
+              <img className="header__buttons--aboutUs" src={aboutUsImage} alt="icon"/>
               About Us
             </button>
             {auth ? (
@@ -91,13 +92,14 @@ function Header({ scrollToTarget, scrollToAboutUs }) {
                       <img
                         className="header__buttons--profile"
                         src={avatarImage}
+                        alt="icon"
                       />
                       {profileName}
                     </Link>
                   </button>
                 </>
                 <button className="header__buttons" onClick={handleLogout}>
-                  <img className="header__buttons--logout" src={logoutImage} />
+                  <img className="header__buttons--logout" src={logoutImage} alt="icon"/>
                   Logout
                 </button>
               </>
@@ -118,7 +120,7 @@ function Header({ scrollToTarget, scrollToAboutUs }) {
           <div className={`header ${relative}`}>
             <div className="header__logoContainer">
               <a href="/">
-                <img src={headerLogo} className="header__logo" />
+                <img src={headerLogo} className="header__logo" alt="icon" />
               </a>
             </div>
             <div onClick={scrollToTarget}></div>
