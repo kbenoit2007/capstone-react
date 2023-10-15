@@ -22,12 +22,12 @@ function BookDetails({selectCoverPageData,onSelectClickNext}){
 
    const handleBookName = (event) =>{
     setBookName(event.target.value)
-    console.log(bookName)
+  //  console.log(bookName)
    }
 
    const handleDesc = (event) =>{
     setBookDesc(event.target.value)
-    console.log(bookDesc)
+   // console.log(bookDesc)
    }
 
 
@@ -69,9 +69,6 @@ function BookDetails({selectCoverPageData,onSelectClickNext}){
             await axios.post(`${process.env.REACT_APP_URL}:${process.env.REACT_APP_PORT}/books`, bookObject).then((data)=>{
               console.log(data)
               console.log(JSON.stringify(data.data[0].id))
-            //    const newArray = [selectCoverPageData, bookObject]
-            //    console.log("data to be passed along "+newArray)
-              // setBookDetailsDate(newArray)
                onSelectClickNext('ImageUpload',bookObject)
     
     
@@ -100,6 +97,9 @@ function BookDetails({selectCoverPageData,onSelectClickNext}){
         <div className="bookDetails__LRContainer">
         <div className="bookDetails__leftContainer">
             <div>
+                <div className="bookDetails__bookCoverText">{bookName}</div>
+                <div className="bookDetails__bookCoverText--desc">{bookDesc}</div>
+                <div className="bookDetails__bookCoverBar"></div>
                 <img src={selectCoverPageData} className="bookDetails__bookCoverImage"/>
             </div>
 

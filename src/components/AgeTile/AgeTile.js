@@ -1,15 +1,7 @@
-import React from 'react'
-import TimeStampToDate from '../TimeStampToDate/TimeStampToDate'
+import React from "react";
+import TimeStampToDate from "../TimeStampToDate/TimeStampToDate";
 
-function AgeTile({age,birthday,name}){
-
-
-
-
-  const newDate = Date(birthday).toLocaleString('en-US', { dateStyle: 'long'});
-  console.log("test123"+newDate)
-
-
+function AgeTile({ age, birthday, name }) {
   const timestampDifference = (time) => {
     const now = new Date();
     const newTimeDifference = (new Date().getTime() - time) / 1000;
@@ -22,19 +14,14 @@ function AgeTile({age,birthday,name}){
     const day = hour * 24;
     const month = day * 30;
     const year = month * 12;
-  
+
     const years = Math.floor(seconds / year);
     const months = Math.floor((seconds % year) / month);
     const days = Math.floor((seconds % month) / day);
     const hours = Math.floor((seconds % day) / hour);
     const minutes = Math.floor((seconds % hour) / minute);
     const remainingSeconds = seconds % minute;
-  
-  
-    // console.log(
-    //   `${years} years, ${months} months, ${days} days, ${hours} hours, ${minutes} minutes, ${remainingSeconds} seconds`
-    // );
-  
+
     if (years > 0) {
       return `${years} years old`;
     }
@@ -54,21 +41,17 @@ function AgeTile({age,birthday,name}){
     }
   };
 
-const currentAge = finalTimeDifference(
-  timestampDifference(birthday)
-)
+  const currentAge = finalTimeDifference(timestampDifference(birthday));
 
-    return(<>
-              <div className="tile__age">{currentAge}</div>
-            <div>{`${name} birthday:`}
-            <TimeStampToDate timeStamp={birthday} />
-            </div>
-            {/* <>
-            {`the birtday TimeStamp is...${birthday}`}
-            <TimeStampToDate timeStamp={birthday} /> */}
-            {/* </> */}
-
-    </>)
+  return (
+    <>
+      <div className="tile__age">{currentAge}</div>
+      <div>
+        {`${name} birthday:`}
+        <TimeStampToDate timeStamp={birthday} />
+      </div>
+    </>
+  );
 }
 
-export default AgeTile
+export default AgeTile;

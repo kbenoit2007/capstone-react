@@ -1,28 +1,22 @@
-import React,{useState,useEffect} from 'react'
+import React, { useState, useEffect } from "react";
 
-function TimeStampToDate({timeStamp}){
-    const [newDate,setNewDate] = useState('')
+function TimeStampToDate({ timeStamp }) {
+  const [newDate, setNewDate] = useState("");
 
-    const newTimeStamp = Number(timeStamp)
+  const newTimeStamp = Number(timeStamp);
 
-      const  convertUnixTimeToReadableDate=(newTimeStamp) => {
-        const date = new Date(newTimeStamp);
-        const options = { year: 'numeric', month: 'long', day: 'numeric',  };
-        return date.toLocaleString(undefined, options);
-      }
-      
-      const formattedDate = convertUnixTimeToReadableDate(newTimeStamp);
-     
-      useEffect(()=>{
-        setNewDate(formattedDate)
+  const convertUnixTimeToReadableDate = (newTimeStamp) => {
+    const date = new Date(newTimeStamp);
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return date.toLocaleString(undefined, options);
+  };
 
-    },[])
+  const formattedDate = convertUnixTimeToReadableDate(newTimeStamp);
 
-     
+  useEffect(() => {
+    setNewDate(formattedDate);
+  }, []);
 
-
-
-
-    return(<>{newDate}</>)
+  return <>{newDate}</>;
 }
-export default TimeStampToDate
+export default TimeStampToDate;
