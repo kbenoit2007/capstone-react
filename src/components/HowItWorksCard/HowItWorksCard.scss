@@ -1,25 +1,39 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
 .howItWorksCard{
     &__container{
 
             display: flex;
             height: 30rem;
-            width: 20rem;
+            width: 25rem;
             box-shadow: 5px 5px 17px 5px rgba(0,0,0,0.2);
-            border-radius: 30px;
+            border-radius: 2rem;
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
+            @include tablet{
+                width: 20rem;
+            }
+            @include desktop{
+                width: 20rem;
+            }
         }
     
     &__header{
         font-size: 3rem;
         display: flex;
     }
-    &__image{
+    &__imageContainer{
         display: flex;
         height:10rem;
         // width:10rem;
         // overflow: hidden; 
+    }
+    &__image{
+        width:10rem;
+        height:10rem;
     }
     &__text{
         font-size: 2.5rem;

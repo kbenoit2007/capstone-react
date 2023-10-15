@@ -73,15 +73,15 @@ function Header({ scrollToTarget, scrollToAboutUs }) {
               </a>
             </div>
             <button className="header__buttons" onClick={scrollToTarget}>
-              <img
+              {/* <img
                 className="header__buttons--howItWorks"
                 src={howItWorksImage}
                 alt="icon"
-              />
+              /> */}
               How It Works
             </button>
             <button className="header__buttons" onClick={scrollToAboutUs}>
-              <img className="header__buttons--aboutUs" src={aboutUsImage} alt="icon"/>
+              {/* <img className="header__buttons--aboutUs" src={aboutUsImage} alt="icon"/> */}
               About Us
             </button>
             {auth ? (
@@ -99,7 +99,7 @@ function Header({ scrollToTarget, scrollToAboutUs }) {
                   </button>
                 </>
                 <button className="header__buttons" onClick={handleLogout}>
-                  <img className="header__buttons--logout" src={logoutImage} alt="icon"/>
+                  {/* <img className="header__buttons--logout" src={logoutImage} alt="icon"/> */}
                   Logout
                 </button>
               </>

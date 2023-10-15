@@ -7,10 +7,10 @@
         display: flex;
         font-size: 2rem;
         @include tablet{
-    
+            font-size: 1.5rem;
         }
         @include desktop{
-    
+            font-size: 1.5rem;
         }
     }
 
