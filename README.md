@@ -1,8 +1,9 @@
-# Moments - Share Digital Photo Albums of Special Moments
+# Momnets - Share Digital Photo Albums of Special Moments
 
 Moments is designed to be a digital memory book to keep tracke of special life events, it can also be shared with loved ones.
 
-React.js, React Router, Javascript, HTML, SCSS and Axios. To use the app please follow these steps:
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,react,scss)](https://skillicons.dev) and Axios.
+To use the app please follow these steps:
 
 ## Installation
 
@@ -37,10 +38,8 @@ password: 'benoit'
 ### Screenshots
 If all is successful this is what you should see.
 
-![Home Page])![Screenshot 2023-10-15 at 20 38 04](https://github.com/kbenoit2007/capstone-react/assets/15655538/a8b5e67e-b5ae-4dae-a869-9dc9c1c6f06b)
+![Home Page](../../../Screenshot%202023-10-15%20at%2020.38.04.png)
 
+![SignIn Page](../../../Screenshot%202023-10-15%20at%2020.38.13.png)
 
-![SignIn Page]![Screenshot 2023-10-15 at 20 38 13](https://github.com/kbenoit2007/capstone-react/assets/15655538/2b9f48e2-73b0-4a78-b749-12b0f82d0342)
-
-
-![Main Page]![Screenshot 2023-10-15 at 20 39 41](https://github.com/kbenoit2007/capstone-react/assets/15655538/6dfb48e5-cd0f-4a9d-81b8-dcfe5476afc9)
+![Main Page](../../../Screenshot%202023-10-15%20at%2020.39.41.png)
