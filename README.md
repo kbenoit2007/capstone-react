@@ -2,7 +2,8 @@
 
 Moments is designed to be a digital memory book to keep tracke of special life events, it can also be shared with loved ones.
 
-React.js, React Router, Javascript, HTML, SCSS and Axios. To use the app please follow these steps:
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,react,scss)](https://skillicons.dev) and Axios.
+To use the app please follow these steps:
 
 ## Installation
 
