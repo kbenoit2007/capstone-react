@@ -38,8 +38,11 @@ password: 'benoit'
 ### Screenshots
 If all is successful this is what you should see.
 
-![Home Page](../../../Screenshot%202023-10-15%20at%2020.38.04.png)
+![Home Page](![Screenshot 2023-10-15 at 20 38 04](https://github.com/kbenoit2007/capstone-react/assets/15655538/f12dc8ff-9a6e-48bc-9547-588adf43a452)
+)
 
-![SignIn Page](../../../Screenshot%202023-10-15%20at%2020.38.13.png)
+![SignIn Page](![Screenshot 2023-10-15 at 20 38 13](https://github.com/kbenoit2007/capstone-react/assets/15655538/382efd91-3b06-431d-8f13-76dde62c1899)
+)
 
-![Main Page](../../../Screenshot%202023-10-15%20at%2020.39.41.png)
+![Main Page](![Screenshot 2023-10-15 at 20 39 41](https://github.com/kbenoit2007/capstone-react/assets/15655538/86a58588-4f55-4e97-a169-35ed62ab3a2f)
+)
