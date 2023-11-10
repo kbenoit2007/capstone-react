@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { useParams } from "react-router-dom";
 import "./ViewBook.scss";
 import GetBook from "../../components/GetBook/GetBook";
+import BackButton from "../../components/BackButton/BackButton";
 
 function ViewBook() {
   const [images, SetImages] = useState([]);
@@ -72,6 +73,7 @@ function ViewBook() {
 
   return (
     <div className="mainApp__container">
+      <BackButton />
       <h1>
         <GetBook book={bookId} />
       </h1>
