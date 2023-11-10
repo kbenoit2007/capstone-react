@@ -3,6 +3,7 @@ import SelectCoverPage from "../SelectCoverPage/SelectCoverPage";
 import BookDetailsPage from "../BookDetailsPage/BookDetailsPage";
 import ImageUpload from "../../components/ImageUpload/ImageUpload";
 import PreviewBook from "../../components/PreviewBook/PreviewBook";
+import BackButton from "../../components/BackButton/BackButton";
 
 function BookBuilderPage() {
   const [activePage, setActivePage] = useState("SelectCoverPage");
@@ -28,6 +29,7 @@ function BookBuilderPage() {
 
   return (
     <div className="mainApp__container">
+      <BackButton />
       {activePage === "SelectCoverPage" && (
         <SelectCoverPage onNextClick={handleNextClick} />
       )}
