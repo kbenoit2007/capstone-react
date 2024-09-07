@@ -1,4 +1,4 @@
-# Momnets - Share Digital Photo Albums of Special Moments
+# Moments - Share Digital Photo Albums of Special Moments
 
 Moments is designed to be a digital memory book to keep tracke of special life events, it can also be shared with loved ones.
 
