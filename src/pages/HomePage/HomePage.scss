@@ -1,36 +1,40 @@
-@use "../../styles/partials/variables" as *;
-@use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/global" as *;
-
-.homePage{
-    &__hero{
-        display: flex;
-        position: relative;
-        box-shadow: 10px 8px 11px 0px rgba(0, 0, 0, 0.17);
+.homePage {
+  &__hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto auto;
+    box-shadow: 10px 8px 11px rgba(0, 0, 0, 0.17);
+    > .header {
+      grid-area: 1 / 1;
     }
-    &__textContainer{
-        display: flex;
-
+    > img {
+      grid-area: 2 / 1 / 5 / 2;
+      width: 100%;
+      height: clamp(20rem, 45vw, 40rem);
+      object-fit: cover;
     }
-    &__title{
-        display: flex;
-        position: absolute;
-        font-size: 5rem;
-        bottom: 6rem; 
-        right: 5rem;
-    }
-    &__subTitle{
-        display: flex;
-        position: absolute;
-        font-size: 2.5rem;
-        bottom: 5.5rem; 
-        right: 5rem;
-    }
-   
-    // justify-content: space-evenly;
-}
-
-.header{
-        display: flex;
-    justify-content: space-evenly;
+  }
+  &__textContainer {
+    display: none;
+  }
+  &__title,
+  &__subTitle {
+    z-index: 1;
+    justify-self: end;
+    max-width: calc(100% - 2rem);
+    margin: 0 1rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(255, 255, 255, 0.9);
+    overflow-wrap: anywhere;
+    line-height: 1.2;
+  }
+  &__title {
+    grid-area: 3 / 1;
+    font-size: clamp(2rem, 1.25rem + 3vw, 4rem);
+  }
+  &__subTitle {
+    grid-area: 4 / 1;
+    font-size: clamp(1.125rem, 1rem + 1vw, 2rem);
+    margin-bottom: 1.5rem;
+  }
 }

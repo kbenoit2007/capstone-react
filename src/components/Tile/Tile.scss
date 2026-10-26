@@ -1,73 +1,70 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/global" as *;
 
-.tile{
-    &__container{
-        display: flex;
-        // border: 5px black solid;
-        flex-direction: column;
-        width: 80%;
-        height: 100%;
-        padding: 1.1rem;
-        box-shadow:  0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.14),
-        0 1px 14px 0 rgba(0, 0, 0, 0.12);
-        border-radius: 5px;
-        margin: 1rem;
-        @include tablet{
-            width: 40%;
-            margin: 3rem;
-        }
-        @include desktop{
-            width: 40%;
-            margin: 3rem;
-
-        }
+.tile {
+  &__container {
+    display: flex;
+    // border: 5px black solid;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    padding: 1.1rem;
+    box-shadow:
+      0 3px 5px -1px rgba(0, 0, 0, 0.2),
+      0 5px 8px 0 rgba(0, 0, 0, 0.14),
+      0 1px 14px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+    margin: 0;
+    @include tablet {
+      width: 100%;
+      margin: 0;
     }
-    &__container:hover {
-        transform: translateX(4px) translateY(0);
-        transition-timing-function: ease;
-        box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2),
-        0 10px 14px 1px rgba(0, 0, 0, 0.14), 0 4px 18px 3px rgba(0, 0, 0, 0.12);
+    @include desktop {
+      width: 100%;
+      margin: 0;
     }
-    &__contents{
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 2rem;
-        
+  }
+  &__container:hover {
+    transform: translateX(4px) translateY(0);
+    transition-timing-function: ease;
+    box-shadow:
+      0 6px 6px -3px rgba(0, 0, 0, 0.2),
+      0 10px 14px 1px rgba(0, 0, 0, 0.14),
+      0 4px 18px 3px rgba(0, 0, 0, 0.12);
+  }
+  &__contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  &__header {
+    display: flex;
+    border-bottom: 1px lightgrey solid;
+  }
+  &__headerText {
+    display: flex;
+    padding-top: 0px;
+    font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+    @include tablet {
+      font-size: 1.25rem;
     }
-    &__header{
-        display: flex;
-        border-bottom: 1px lightgrey solid;
-        
-
+    @include desktop {
+      font-size: 1.25rem;
     }
-    &__headerText{
-        display: flex;
-        padding-top: 0px;
-        font-size: 3.5rem;
-        @include tablet{
-            font-size: 2.5rem;
-        }
-        @include desktop{
-            font-size: 2.5rem;
-        }
-
+  }
+  &__age {
+    display: flex;
+    font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
+    @include tablet {
+      font-size: 1.5rem;
     }
-    &__age{
-        display: flex;
-        font-size: 5rem;
-        @include tablet{
-            font-size: 3rem;
-        }
-        @include desktop{
-            font-size: 3rem;
-        }    
+    @include desktop {
+      font-size: 1.5rem;
     }
-
+  }
 }
 
-.removePadding{
-    padding: 0px;
+.removePadding {
+  padding: 0px;
 }

@@ -46,3 +46,46 @@ If all is successful this is what you should see.
 
 ![Main Page](![Screenshot 2023-10-15 at 20 39 41](https://github.com/kbenoit2007/capstone-react/assets/15655538/86a58588-4f55-4e97-a169-35ed62ab3a2f)
 )
+
+## Local UI development
+
+Install the locked dependencies and start the React development server:
+
+```sh
+npm ci
+npm start
+```
+
+Open http://localhost:4000. The checked-in environment config sets the frontend
+port; an ignored `.env.local` can override it. For an explicit local setup:
+
+```dotenv
+PORT=4000
+REACT_APP_URL=http://localhost
+REACT_APP_PORT=9090
+```
+
+The frontend can be compiled with `npm run build`. Login, registration, profile
+loading, and photo-book operations require the separate Moments API on port 9090
+and its database. This repository does not contain that server. Without it,
+requests fail and the development error overlay may appear; the layout checks
+below use mock API responses and do not verify backend behavior.
+
+### UI step 1: typography and responsive sizing
+
+The root uses the browser's default font size (normally 16px), with bounded fluid
+headings and 16px form controls. Cards, forms, onboarding choices, and book cover
+previews adapt to the available width instead of relying on a viewport-sized rem.
+Global styles are loaded once at the entry point before component styles.
+
+Validation performed in Chrome with mock API responses:
+
+- Home, login, registration, profile, event selection, cover selection, book
+  details, and upload layouts at 320, 390, 768, and 1440px viewport widths.
+- Root and text input sizes checked at 16px; horizontal overflow checked with a
+  1px rounding tolerance across those screens.
+- Login at 390px with the root text size increased to 200% (32px).
+- Production build completed with pre-existing lint/dependency warnings.
+
+Authentication, validation, event branching, upload functionality, and the photo
+viewer remain separate follow-up work.

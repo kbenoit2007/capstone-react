@@ -1,82 +1,62 @@
-@use "../../styles/partials/variables" as *;
-@use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/global" as *;
-
-.input{
-    &__main{
-        display: flex;
-        justify-content: center;
-        // border:5px black solid;
-        box-shadow: 5px 5px 17px 5px rgba(0,0,0,0.2);
-        width:70%;
-        border-radius: 30px;
-        height: 60rem;
-        @include tablet{
-            height: 45rem;
-        }
-        @include desktop{
-            height: 45rem;
-        }
-
-    }
-    &__header{
-        display: flex;
-        margin-top: 3rem;
-        font-size: 4.5rem;
-        margin-bottom: 3rem;
-        @include tablet{
-            font-size: 3rem;
-        }
-        @include desktop{
-            font-size: 3rem;
-        }
-    }
-    &__textContainer{
-        display: flex;
-        flex-direction: column;
-        width: 60%;
-        align-items: center;
-    }
-    &__submitButton{
-        display: flex;
-        justify-content: center;
-        margin-bottom: .5rem;
-    }
-    &__subtext{
-        font-size:1.1rem;
-    }
-    &__image{
-        // height: 200px;
-        // width:200px
-        width: 100%;
-        border-radius: 30px 0% 0% 30px;
-    }
-    &__rightSide{
-        display: flex;
-        width:50%;
-        flex-direction: column;
-    }
-    &__rightSideContainer{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    &__leftSide{
-        display: flex;
-        width:50%;
-    }
-    &__username{
-        margin-bottom: 2rem;
-    }
-    &__password{
-        margin-bottom: 2rem;
-    }
-    &__name{
-        margin-bottom: 2rem;
-    }
+.top {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
 }
-.top{
+.input {
+  &__main {
+    display: flex;
+    width: min(100%, 60rem);
+    border-radius: 1.5rem;
+    box-shadow: 5px 5px 17px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  &__header {
+    font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
+    margin: 0 0 1.5rem;
+  }
+  &__leftSide {
+    display: none;
+  }
+  &__rightSide {
+    width: 100%;
+    padding: clamp(1rem, 3vw, 3rem);
+    min-width: 0;
+  }
+  &__rightSideContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__textContainer {
+    width: 100%;
+    max-width: 24rem;
+  }
+  &__submitButton {
     display: flex;
     justify-content: center;
-    padding-top: 100px;
+    margin-bottom: 1rem;
+  }
+  &__subtext {
+    font-size: 1rem;
+  }
+  &__username,
+  &__password,
+  &__name {
+    margin-bottom: 1rem;
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @media (min-width: 48rem) {
+    &__leftSide {
+      display: flex;
+      width: 45%;
+    }
+    &__rightSide {
+      width: 55%;
+    }
+  }
 }

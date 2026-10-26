@@ -1,23 +1,20 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/global" as *;
 
-.milestones{
-    &__image{
-        margin-bottom: 3rem;
-        width:20rem;
-        height:20rem;
-        @include tablet{
-            margin-bottom: 1rem;
-            width:10rem;
-            height:10rem;
-
-        }
-        @include desktop{
-            margin-bottom: 1rem;
-            width:10rem;
-            height:10rem;
-
-        }
+.milestones {
+  &__image {
+    margin-bottom: 3rem;
+    width: 7rem;
+    height: 7rem;
+    @include tablet {
+      margin-bottom: 1rem;
+      width: 7rem;
+      height: 7rem;
     }
+    @include desktop {
+      margin-bottom: 1rem;
+      width: 7rem;
+      height: 7rem;
+    }
+  }
 }
