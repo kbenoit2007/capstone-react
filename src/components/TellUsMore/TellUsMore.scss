@@ -1,14 +1,13 @@
-.tellUsMore{
-    &__container{
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-
-    }
-    &__header{
-        display: flex;
-        font-size: 4rem;
-        margin-top: 3rem;
-        margin-bottom: 6rem;
-    }
+.tellUsMore {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__header {
+    display: flex;
+    font-size: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
 }

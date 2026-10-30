@@ -1,21 +1,18 @@
-.howItWorks{
-    &__container{
-        display: block;
-    }
-    &__cardContainer{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        padding-left: 3rem;
-        padding-right: 4rem;
-    }
-    &__header{
-        display:flex;
-        justify-content: center;
-        font-size: 3.5rem;
-        margin-top: 2rem;
-        margin-bottom: 4rem;
-        font-weight: 600;
-    }
-  
+.howItWorks {
+  &__container {
+    max-width: 75rem;
+    margin-inline: auto;
+    padding: 2rem 1rem;
+  }
+  &__cardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap: 1.5rem;
+  }
+  &__header {
+    font-size: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+    text-align: center;
+    margin: 0 0 2rem;
+    font-weight: 600;
+  }
 }

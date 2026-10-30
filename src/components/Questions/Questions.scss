@@ -1,14 +1,13 @@
-.questions{
-    &__container{
-        display: flex;
-
-    }
-    &__header{
-        display: flex;
-        font-size: 3rem;
-    }
-    &__text{
-        display: flex;
-        font-size: 2rem;
-    }
+.questions {
+  &__container {
+    display: flex;
+  }
+  &__header {
+    display: flex;
+    font-size: 1.5rem;
+  }
+  &__text {
+    display: flex;
+    font-size: 1.125rem;
+  }
 }
